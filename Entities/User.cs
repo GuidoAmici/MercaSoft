@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    internal class User
+    public class User
     {
         private int ID { get; set; }
-        private string Name { get; set; }
+        private string Username { get; set; }
         private string Password { get; set; }
         private string Email { get; set; }
     }
