@@ -7,9 +7,15 @@ namespace View
             InitializeComponent();
         }
 
-        private void Container_Load(object sender, EventArgs e)
+        private void Container_Reload(object sender, EventArgs e)
         {
-
+            /*
+            if (!Program.Logged)
+            {
+                this.mainPanel.Parent = new LogIn();
+                this.mainPanel.Show();
+            }
+            */
         }
     }
 }

@@ -220,7 +220,7 @@
             this.Name = "Container";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MercaSoft";
-            this.Load += new System.EventHandler(this.Container_Load);
+            this.Load += new System.EventHandler(this.Container_Reload);
             this.sidePanel.ResumeLayout(false);
             this.userPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
