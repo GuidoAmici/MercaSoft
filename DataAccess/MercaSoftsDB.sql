@@ -27,6 +27,7 @@ GO
 Create table Items(
 	ID int not null identity(1,1),
 	Name varchar(50) not null,
+	Price double not null,
 	PRIMARY KEY (ID)
 )
 GO
