@@ -1,9 +1,13 @@
 ﻿using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 
-namespace DataAccess
+namespace Control
 {
     public class DAO
+        //DAO = Data Access Object, es un objeto a través del cual establecemos una conexión con la base de datos.
+        //- Para pedir algo a la base de datos, instaciamos un objeto de clase DAO, abrimos la conexión, setteamos la consulta-
+        //- y ejecutamos la consulta. Una vez ejecutada, le pediremos al objeto Reader, a través de la función Read() -
+        //- los datos que haya devuelto la consulta.
     {
         private readonly string ServerName = "CHALLENGER\\SQLEXPRESS";
         private readonly string DBName = "MercaSoftDB";
