@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.sidePanel = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
-            this.Producción = new System.Windows.Forms.Button();
+            this.btnProduccion = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.userPanel = new System.Windows.Forms.Panel();
@@ -47,10 +47,10 @@
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.sidePanel.Controls.Add(this.button5);
+            this.sidePanel.Controls.Add(this.btnLogOut);
             this.sidePanel.Controls.Add(this.btnCompras);
             this.sidePanel.Controls.Add(this.btnInventario);
-            this.sidePanel.Controls.Add(this.Producción);
+            this.sidePanel.Controls.Add(this.btnProduccion);
             this.sidePanel.Controls.Add(this.btnVentas);
             this.sidePanel.Controls.Add(this.btnDashboard);
             this.sidePanel.Controls.Add(this.userPanel);
@@ -60,23 +60,24 @@
             this.sidePanel.Size = new System.Drawing.Size(200, 561);
             this.sidePanel.TabIndex = 0;
             // 
-            // button5
+            // btnLogOut
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(0, 519);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(200, 42);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Dashboard";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogOut.Location = new System.Drawing.Point(0, 519);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnLogOut.Size = new System.Drawing.Size(200, 42);
+            this.btnLogOut.TabIndex = 6;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnCompras
             // 
@@ -114,23 +115,23 @@
             this.btnInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnInventario.UseVisualStyleBackColor = true;
             // 
-            // Producción
+            // btnProduccion
             // 
-            this.Producción.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Producción.FlatAppearance.BorderSize = 0;
-            this.Producción.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Producción.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Producción.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.Producción.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Producción.Location = new System.Drawing.Point(0, 274);
-            this.Producción.Name = "Producción";
-            this.Producción.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.Producción.Size = new System.Drawing.Size(200, 42);
-            this.Producción.TabIndex = 3;
-            this.Producción.Text = "Producción";
-            this.Producción.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Producción.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.Producción.UseVisualStyleBackColor = true;
+            this.btnProduccion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProduccion.FlatAppearance.BorderSize = 0;
+            this.btnProduccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProduccion.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnProduccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnProduccion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProduccion.Location = new System.Drawing.Point(0, 274);
+            this.btnProduccion.Name = "btnProduccion";
+            this.btnProduccion.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnProduccion.Size = new System.Drawing.Size(200, 42);
+            this.btnProduccion.TabIndex = 3;
+            this.btnProduccion.Text = "Producción";
+            this.btnProduccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProduccion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnProduccion.UseVisualStyleBackColor = true;
             // 
             // btnVentas
             // 
@@ -205,7 +206,7 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(200, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(600, 561);
+            this.mainPanel.Size = new System.Drawing.Size(584, 561);
             this.mainPanel.TabIndex = 1;
             // 
             // Container
@@ -213,14 +214,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(800, 561);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.sidePanel);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Container";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MercaSoft";
-            this.Load += new System.EventHandler(this.Container_Reload);
+            this.Load += new System.EventHandler(this.Container_Load);
             this.sidePanel.ResumeLayout(false);
             this.userPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -233,10 +234,10 @@
         private Panel sidePanel;
         private Panel userPanel;
         private PictureBox pictureBox1;
-        private Button button5;
+        private Button btnLogOut;
         private Button btnCompras;
         private Button btnInventario;
-        private Button Producción;
+        private Button btnProduccion;
         private Button btnVentas;
         private Button btnDashboard;
         private Label lblUserName;

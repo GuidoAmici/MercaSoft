@@ -1,9 +1,11 @@
+using Entities;
+
 namespace View
 {
     internal static class Program
     {
-        //private static User User;
-        public static bool Logged { get; set; }
+        public static User User;
+        public static bool Logged;
 
 
         /// <summary>

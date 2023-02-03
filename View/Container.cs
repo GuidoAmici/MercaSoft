@@ -7,16 +7,21 @@ namespace View
             InitializeComponent();
         }
 
-        private void Container_Reload(object sender, EventArgs e)
+        private void Container_Load(object sender, EventArgs e)
         {
-            if (Program.Logged == false)
+            Reload();
+        }
+
+        private void Reload()
+        {
+            if (Program.Logged)
             {
-                sidePanel.Visible = false;
-                InsertIntoPanel<Login>();
+                sidePanel.Visible = true;
             }
             else
             {
-                sidePanel.Visible = true;
+                sidePanel.Visible = false;
+                InsertIntoPanel<LogIn>();
             }
         }
 
@@ -44,17 +49,22 @@ namespace View
                 formInPanel.Show();
 
                 formInPanel.BringToFront();
+                formInPanel.FormClosed += new FormClosedEventHandler(MainPanelFormClosed);
             }
         }
 
-        private void FormInPanel_FormClosed(object? sender, FormClosedEventArgs e)
+        private void MainPanelFormClosed(object? sender, FormClosedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (Application.OpenForms["LogIn"] == null)
+            {
+                Reload();
+            }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            Program.Logged = false;
+            Reload();
         }
     }
 }
