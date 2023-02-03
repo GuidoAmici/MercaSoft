@@ -3,7 +3,8 @@ namespace View
     internal static class Program
     {
         //private static User User;
-        private static bool Logged { get; set; }
+        public static bool Logged { get; set; }
+
 
         /// <summary>
         ///  The main entry point for the application.
