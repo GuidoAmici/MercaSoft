@@ -53,7 +53,19 @@ GO
 Create table InvoiceItems(
 	ID int not null identity(1,1),
 	InvoiceID int not null,
+	ItemID int not null,
+	Price float not null,
 	PRIMARY KEY (ID),
-	FOREIGN KEY (InvoiceID) references Invoices(ID)
+	FOREIGN KEY (InvoiceID) references Invoices(ID),
+	FOREIGN KEY (ItemID) references Items(ID)
+)
+GO
+
+Create table LogHistory(
+	ID int not null identity(1,1),
+	UserID int not null,
+	Time DateTime not null,
+	PRIMARY KEY (ID),
+	FOREIGN KEY (UserID) references Users(ID)
 )
 GO
