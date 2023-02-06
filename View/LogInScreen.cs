@@ -1,20 +1,22 @@
-﻿namespace View
+﻿using Control;
+
+namespace View
 {
-    public partial class LogIn : Form
+    public partial class LogInScreen : Form
     {
-        private string User;
-        private string Password;
-        public LogIn()
+        private string? Username;
+        private string? Password;
+        public LogInScreen()
         {
             InitializeComponent();
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            User = txtUser.Text;
+            Username = txtUser.Text;
             Password = txtPassword.Text;
 
-            Program.Logged = Control.User.LogIn(User, Password);
+            Sesion.LogIn(Username, Password);
             Close();
         }
 
