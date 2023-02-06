@@ -1,39 +1,50 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data;
+using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 
 namespace Control
 {
     public class DAO
-        //DAO = Data Access Object, es un objeto a través del cual establecemos una conexión con la base de datos.
-        //- Para pedir algo a la base de datos, instaciamos un objeto de clase DAO, abrimos la conexión, setteamos la consulta-
-        //- y ejecutamos la consulta. Una vez ejecutada, le pediremos al objeto Reader, a través de la función Read() -
-        //- los datos que haya devuelto la consulta.
+    //DAO = Data Access Object, es un objeto a través del cual establecemos una conexión con la base de datos.
+    //- Para pedir algo a la base de datos, instaciamos un objeto de clase DAO, abrimos la conexión, setteamos la consulta-
+    //- y ejecutamos la consulta. Una vez ejecutada, le pediremos al objeto Reader, a través de la función Read() -
+    //- los datos que haya devuelto la consulta.
     {
         private readonly string ServerName = "CHALLENGER\\SQLEXPRESS";
         private readonly string DBName = "MercaSoftDB";
 
-        private SqlConnection Connection;
-        private SqlCommand Command;
-        private SqlDataReader Reader;
-
-
+        internal SqlConnection Connection { get; private set; }
+        internal SqlCommand Command { get; private set; }
+        internal SqlDataReader Reader { get; private set; }
 
         public DAO()
         {
-            Connection = new SqlConnection("Data Source=" + ServerName + ";Initial catalog=" + DBName + ";Security=SSPI");
+            Connection = new SqlConnection("Data Source = " + ServerName + "; Initial Catalog = " + DBName + "; Integrated Security = SSPI");
             Command = new SqlCommand();
         }
 
         public void OpenConnection()
         {
-            if (Connection != null) Connection.Open();
-            else throw new Exception();
+            try
+            {
+                Connection.Open();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
 
         public void SetConsult(string consulta)
         {
             Command.CommandType = System.Data.CommandType.Text;
             Command.CommandText = consulta;
+        }
+
+        public void SetParameter(string parameterName, object value)
+        {
+            Command.Parameters.AddWithValue(parameterName, value);
         }
 
         public void ExecuteConsult()
@@ -48,11 +59,6 @@ namespace Control
 
                 throw;
             }
-        }
-
-        public SqlDataReader Read()
-        {
-            return Reader;
         }
 
         public void CloseConnection()
