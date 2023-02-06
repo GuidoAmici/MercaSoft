@@ -16,7 +16,7 @@ namespace View
 
         private void Reload()
         {
-            if (Sesion.SesionStatus())
+            if (Sesion.LogStatus())
             {
                 sidePanel.Visible = true;
             }
@@ -67,6 +67,16 @@ namespace View
         {
             Sesion.LogOut();
             Reload();
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Container_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Sesion.LogOut();
         }
     }
 }

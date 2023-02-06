@@ -12,23 +12,32 @@ namespace Control
     {
         internal static User? User;
 
-        public static bool SesionStatus()
+        public static bool LogStatus()
         {
-            if (User == null) return false;
-            else return true;
+            if (User != null) return true;
+            else return false;
         }
 
-        public static bool LogIn(string username, string password)
+        public static void LogIn(string username, string password)
         {
-            UserDao userDao = new UserDao();
-            User = userDao.GetUser(username, password);
-            if (User == null) return false;
-            else return true;
+            User = UserDao.GetUser(username, password);
+            if (LogStatus())
+                UserDao.RegisterLogIn(User);
         }
 
         public static void LogOut()
         {
-            User = null;
+            if (LogStatus())
+            {
+                UserDao.RegisterLogOut(User);
+                User = null;
+            }
+        }
+
+        public static bool UserExists(string username)
+        {
+            if (UserDao.UserExists(username)) return true;
+            else return false;
         }
     }
 }

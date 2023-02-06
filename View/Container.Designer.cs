@@ -126,6 +126,7 @@
             this.btnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnInventario.UseVisualStyleBackColor = true;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // btnProduccion
             // 
@@ -245,6 +246,7 @@
             this.Name = "Container";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MercaSoft";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Container_FormClosing);
             this.Load += new System.EventHandler(this.Container_Load);
             this.sidePanel.ResumeLayout(false);
             this.userPanel.ResumeLayout(false);

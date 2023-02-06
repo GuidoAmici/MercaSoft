@@ -47,13 +47,15 @@
             this.btnLogIn.Location = new System.Drawing.Point(130, 160);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(140, 40);
-            this.btnLogIn.TabIndex = 0;
+            this.btnLogIn.TabIndex = 3;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // txtUser
             // 
+            this.txtUser.AcceptsReturn = true;
+            this.txtUser.AcceptsTab = true;
             this.txtUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -68,6 +70,8 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.AcceptsReturn = true;
+            this.txtPassword.AcceptsTab = true;
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -90,13 +94,13 @@
             this.lblForgottenPassword.Location = new System.Drawing.Point(137, 220);
             this.lblForgottenPassword.Name = "lblForgottenPassword";
             this.lblForgottenPassword.Size = new System.Drawing.Size(131, 17);
-            this.lblForgottenPassword.TabIndex = 3;
+            this.lblForgottenPassword.TabIndex = 4;
             this.lblForgottenPassword.TabStop = true;
             this.lblForgottenPassword.Text = "Forgotten password";
             this.lblForgottenPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblForgottenPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblForgottenPassword_LinkClicked);
             // 
-            // LogIn
+            // LogInScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,7 +113,7 @@
             this.Controls.Add(this.btnLogIn);
             this.MdiChildrenMinimizedAnchorBottom = false;
             this.MinimizeBox = false;
-            this.Name = "LogIn";
+            this.Name = "LogInScreen";
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

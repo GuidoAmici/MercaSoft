@@ -9,38 +9,85 @@ namespace Control
 {
     public class UserDao
     {
-        public User GetUser(string username, string password)
+        public static User GetUser(string username, string password)
         {
-            DAO dao = new DAO();
-            string CheckLogInData = "select * from Users where User = " + username + " and Password = " + password;
+            DAO dao = new();
+            string CheckLogInData = "select * from Users where Username = @username and Password = @password";
             User user = null;
 
             try
             {
                 dao.OpenConnection();
                 dao.SetConsult(CheckLogInData);
+                dao.SetParameter("@username", username);
+                dao.SetParameter("@password", password);
                 dao.ExecuteConsult();
-                if (dao.Read() != null)
+
+                if (dao.Reader.Read())
                 {
-                    user = new User(
-                        (int)dao.Read()["ID"],
-                        (string)dao.Read()["Username"],
-                        (string)dao.Read()["Password"],
-                        (string)dao.Read()["Email"]
+                    user = new (
+                        (int)dao.Reader["ID"],
+                        (string)dao.Reader["Username"],
+                        (string)dao.Reader["Password"],
+                        (string)dao.Reader["Email"]
                         );
 
                 }
 
                 return user;
             }
-            catch (Exception ex)
+            catch (Exception) { throw; }
+            finally { dao.CloseConnection(); }
+        }
+
+        public static void RegisterLogIn(User user)
+        {
+            DAO dao = new();
+            string RegisterSesion = "insert into LogHistory (UserID,LogType) values (@userID,'Log In')";
+
+            try
             {
-                throw ex;
+                dao.OpenConnection();
+                dao.SetConsult(RegisterSesion);
+                dao.SetParameter("@userID", user.ID);
+                dao.ExecuteConsult();
             }
-            finally
+            catch (Exception) { throw; }
+            finally { dao.CloseConnection(); }
+        }
+
+        public static void RegisterLogOut(User user)
+        {
+            DAO dao = new();
+            string RegisterSesion = "insert into LogHistory (UserID,LogType) values (@userID,'Log Out')";
+
+            try
             {
-                dao.CloseConnection();
+                dao.OpenConnection();
+                dao.SetConsult(RegisterSesion);
+                dao.SetParameter("@userID", user.ID);
+                dao.ExecuteConsult();
             }
+            catch (Exception) { throw; }
+            finally { dao.CloseConnection(); }
+        }
+
+        public static bool UserExists(string username)
+        {
+            DAO dao = new();
+            string CheckUserExistance = "select * from users where Username = @username";
+
+            try
+            {
+                dao.OpenConnection();
+                dao.SetConsult(CheckUserExistance);
+                dao.SetParameter("@username", username);
+                dao.ExecuteConsult();
+                if (dao.Reader.Read() != null) return true;
+                else return false;
+            }
+            catch (Exception) { throw; }
+            finally { dao.CloseConnection(); }
         }
     }
 }
