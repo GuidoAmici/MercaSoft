@@ -1,13 +1,7 @@
-using Entities;
-
 namespace View
 {
     internal static class Program
     {
-        public static User User;
-        public static bool Logged;
-
-
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>

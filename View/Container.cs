@@ -1,3 +1,5 @@
+using Control;
+
 namespace View
 {
     public partial class Container : Form
@@ -14,14 +16,14 @@ namespace View
 
         private void Reload()
         {
-            if (Program.Logged)
+            if (Sesion.SesionStatus())
             {
                 sidePanel.Visible = true;
             }
             else
             {
                 sidePanel.Visible = false;
-                InsertIntoPanel<LogIn>();
+                InsertIntoPanel<LogInScreen>();
             }
         }
 
@@ -63,7 +65,7 @@ namespace View
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            Program.Logged = false;
+            Sesion.LogOut();
             Reload();
         }
     }
