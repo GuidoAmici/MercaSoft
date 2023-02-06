@@ -43,10 +43,10 @@ namespace Control
                 Command.Connection = Connection;
                 Reader = Command.ExecuteReader();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw ex;
+                throw;
             }
         }
 
