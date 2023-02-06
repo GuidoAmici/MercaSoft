@@ -8,10 +8,10 @@ namespace Entities
 {
     public class User
     {
-        private int ID { get; set; }
-        private string Username { get; set; }
-        private string Password { get; set; }
-        private string Email { get; set; }
+        public int ID { get; internal set; }
+        public string Username { get; internal set; }
+        internal string Password { get; set; }
+        public string Email { get; internal set; }
 
         public User()
         {
