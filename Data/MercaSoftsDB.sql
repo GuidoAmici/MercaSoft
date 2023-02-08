@@ -62,11 +62,37 @@ GO
 Create table Items(
 	ID int not null identity,
 	Name varchar(50) not null,
-	Price float not null,
+	SalePrice float,
 	CategoryID int,
 	IsForSale bit not null,
+	Description varchar(80),
+	CodeName varchar(30),
+	BarCode int,
 	PRIMARY KEY (ID),
 	FOREIGN KEY (CategoryID) references Categories(ID)
+)
+GO
+
+Create table ReferencePriceHistory(
+	ID int not null identity,
+	ReferencePrice float not null,
+	Date DateTime default getdate()
+	PRIMARY KEY (ID)
+)
+GO
+
+Create table ItemPriceHistory(
+	ID int not null identity,
+	ItemID int not null,
+	AdditionDate DateTime not null default getdate(),
+	Price float not null,
+	AdditionReferencePriceID int not null,
+	DischargeDate DateTime,
+	DischargeReferencePriceID int,
+	PRIMARY KEY (ID),
+	FOREIGN KEY (ItemID) references Items(ID),
+	FOREIGN KEY (AdditionReferencePriceID) references ReferencePriceHistory(ID),
+	FOREIGN KEY (DischargeReferencePriceID) references ReferencePriceHistory(ID)
 )
 GO
 
@@ -111,4 +137,4 @@ Create table LogHistory(
 )
 GO
 
-select * from Users
+select * from LogHistory
