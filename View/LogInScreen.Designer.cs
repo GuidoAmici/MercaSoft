@@ -62,6 +62,7 @@
             this.txtUser.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.txtUser.Location = new System.Drawing.Point(80, 30);
+            this.txtUser.MaxLength = 30;
             this.txtUser.Name = "txtUser";
             this.txtUser.PlaceholderText = "User";
             this.txtUser.Size = new System.Drawing.Size(240, 32);
@@ -78,6 +79,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.txtPassword.Location = new System.Drawing.Point(80, 85);
+            this.txtPassword.MaxLength = 30;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.PlaceholderText = "Password";

@@ -29,7 +29,9 @@ namespace Control
         {
             if (LogStatus())
             {
+#pragma warning disable CS8604 // Possible null reference argument.
                 UserDao.RegisterLogOut(User);
+#pragma warning restore CS8604 // Possible null reference argument.
                 User = null;
             }
         }

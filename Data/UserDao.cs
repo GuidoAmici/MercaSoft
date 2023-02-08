@@ -31,7 +31,6 @@ namespace Control
                         (string)dao.Reader["Password"],
                         (string)dao.Reader["Email"]
                         );
-
                 }
 
                 return user;
