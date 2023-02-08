@@ -18,11 +18,11 @@ namespace View
         {
             if (Sesion.LogStatus())
             {
-                sidePanel.Visible = true;
+                menuStrip.Visible = true;
             }
             else
             {
-                sidePanel.Visible = false;
+                menuStrip.Visible = false;
                 InsertIntoPanel<LogInScreen>();
             }
         }
@@ -30,7 +30,7 @@ namespace View
         private void InsertIntoPanel<InsertedForm>() where InsertedForm : Form, new()
         {
             Form formInPanel;
-            formInPanel = mainPanel.Controls.OfType<InsertedForm>().FirstOrDefault();
+            formInPanel = formsPanel.Controls.OfType<InsertedForm>().FirstOrDefault();
 
             if (formInPanel != null)
             {
@@ -46,8 +46,8 @@ namespace View
                 formInPanel.TopLevel = false;
                 formInPanel.FormBorderStyle = FormBorderStyle.None;
                 formInPanel.Dock = DockStyle.Fill;
-                mainPanel.Controls.Add(formInPanel);
-                mainPanel.Tag = formInPanel;
+                formsPanel.Controls.Add(formInPanel);
+                formsPanel.Tag = formInPanel;
                 formInPanel.Show();
 
                 formInPanel.BringToFront();
@@ -69,14 +69,14 @@ namespace View
             Reload();
         }
 
-        private void btnInventario_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Container_FormClosing(object sender, FormClosingEventArgs e)
         {
             Sesion.LogOut();
+        }
+
+        private void btnAddNewItem_Click(object sender, EventArgs e)
+        {
+            InsertIntoPanel<AddItemScreen>();
         }
     }
 }
