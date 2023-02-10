@@ -7,6 +7,7 @@ namespace View
         public Container()
         {
             InitializeComponent();
+            InsertIntoPanel<DashboardScreen>();
         }
 
         private void Container_Load(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace View
         private void InsertIntoPanel<InsertedForm>() where InsertedForm : Form, new()
         {
             Form formInPanel;
-            formInPanel = formsPanel.Controls.OfType<InsertedForm>().FirstOrDefault();
+            formInPanel = mainPanel.Controls.OfType<InsertedForm>().FirstOrDefault();
 
             if (formInPanel != null)
             {
@@ -46,8 +47,8 @@ namespace View
                 formInPanel.TopLevel = false;
                 formInPanel.FormBorderStyle = FormBorderStyle.None;
                 formInPanel.Dock = DockStyle.Fill;
-                formsPanel.Controls.Add(formInPanel);
-                formsPanel.Tag = formInPanel;
+                mainPanel.Controls.Add(formInPanel);
+                mainPanel.Tag = formInPanel;
                 formInPanel.Show();
 
                 formInPanel.BringToFront();
@@ -63,9 +64,28 @@ namespace View
             }
         }
 
+        private void CloseOpenForms()
+        {
+            List<Form> forms = new List<Form>();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (!form.Equals(this))
+                {
+                    forms.Add(form);
+                }
+            }
+
+            foreach (Form form in forms)
+            {
+                form.Close();
+            }
+        }
+
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             Sesion.LogOut();
+            CloseOpenForms();
             Reload();
         }
 
@@ -77,6 +97,11 @@ namespace View
         private void btnAddNewItem_Click(object sender, EventArgs e)
         {
             InsertIntoPanel<AddItemScreen>();
+        }
+
+        private void menuDashboard_Click(object sender, EventArgs e)
+        {
+            InsertIntoPanel<DashboardScreen>();
         }
     }
 }
