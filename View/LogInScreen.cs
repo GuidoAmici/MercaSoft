@@ -2,7 +2,7 @@
 
 namespace View
 {
-    public partial class LogInScreen : Form
+    public partial class LogInScreen : BaseForm
     {
         private string? Username;
         private string? Password;
@@ -20,6 +20,7 @@ namespace View
                 || Username == null)
             {
                 MessageBox.Show("Ingrese el nombre usuario.");
+                txtUser.Focus();
                 return;
             }
 
@@ -27,18 +28,29 @@ namespace View
                 || Password == null)
             {
                 MessageBox.Show("Ingrese la contraseña.");
+                txtPassword.Focus();
                 return;
             }
 
             Sesion.LogIn(Username, Password);
             if (Sesion.LogStatus())
+            {
+                Username = null;
+                Password = null;
                 Close();
-            else MessageBox.Show("Credenciales incorrectas.");
+            }
+            else
+            {
+                MessageBox.Show("Credenciales incorrectas.");
+                txtUser.Text = string.Empty;
+                txtPassword.Text = string.Empty;
+                txtUser.Focus();
+            }
         }
 
         private void lblForgottenPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //TODO Que pasa al hacer click en "Forgotten password?"
+            //TODOWHY Que pasa al hacer click en "Forgotten password?"
         }
     }
 }

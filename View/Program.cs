@@ -2,7 +2,7 @@ namespace View
 {
     internal static class Program
     {
-        internal static Color iconForeColor = Color.FromArgb(0, 126, 249);
+        internal static Color iconForeColor = Color.FromArgb(0, 125, 250);
         internal static Color iconBackColor = Color.Transparent;
         internal static Color primaryBackColor = Color.FromArgb(24, 30, 54);
         internal static Color secondaryBackColor = Color.FromArgb(46, 51, 73);
