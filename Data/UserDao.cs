@@ -23,7 +23,7 @@ namespace Control
                 dao.SetParameter("@password", password);
                 dao.ExecuteConsult();
 
-                if (dao.Reader.Read())
+                while (dao.Reader.Read())
                 {
                     user = new (
                         (int)dao.Reader["ID"],

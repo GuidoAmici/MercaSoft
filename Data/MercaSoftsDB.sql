@@ -1,4 +1,4 @@
-USE master
+﻿USE master
 GO
 
 DROP database MercaSoftDB
@@ -8,6 +8,7 @@ CREATE database MercaSoftDB
 GO
 
 USE MercaSoftDB
+GO
 
 Create table Users(
 	ID int not null identity,
@@ -54,9 +55,15 @@ GO
 Create table Categories(
 	ID int not null identity,
 	Name varchar(30) not null,
-	Active bit not null,
+	IsActive bit not null
 	PRIMARY KEY (ID)
 )
+GO
+
+insert into Categories (Name, IsActive) values 
+	('Medición', 1),
+	('Accesorios', 1),
+	('Merchandising', 1)
 GO
 
 Create table Items(
@@ -65,7 +72,7 @@ Create table Items(
 	SalePrice float,
 	CategoryID int,
 	IsForSale bit not null,
-	Description varchar(80),
+	Description varchar(100),
 	CodeName varchar(30),
 	BarCode int,
 	PRIMARY KEY (ID),
@@ -137,4 +144,4 @@ Create table LogHistory(
 )
 GO
 
-select * from LogHistory
+select * from Categories
