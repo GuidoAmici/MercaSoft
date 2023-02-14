@@ -103,5 +103,10 @@ namespace View
         {
             InsertIntoPanel<DashboardScreen>();
         }
+
+        private void submenuCheckInventory_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
