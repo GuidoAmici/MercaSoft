@@ -40,7 +40,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BaseForm";
-            this.Padding = new System.Windows.Forms.Padding(60);
+            this.Padding = new System.Windows.Forms.Padding(60, 30, 60, 30);
             this.Text = "BaseForm";
             this.ResumeLayout(false);
 

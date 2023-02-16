@@ -31,7 +31,6 @@
             components = new System.ComponentModel.Container();
             this.AcceptsReturn = true;
             this.AcceptsTab = true;
-            this.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
