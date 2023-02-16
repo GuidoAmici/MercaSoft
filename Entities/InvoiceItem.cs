@@ -28,7 +28,7 @@ namespace Entities
 
         public void Recalculate()
         {
-            SubtotalWithoutTaxes = Item.Price * Quantity;
+            SubtotalWithoutTaxes = (float)Item.Price * Quantity;
 
             Taxes = 0;
             foreach (Tax tax in TaxesList)
