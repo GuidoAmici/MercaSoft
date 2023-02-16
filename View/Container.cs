@@ -111,7 +111,7 @@ namespace View
 
         private void submenuAddSale_Click(object sender, EventArgs e)
         {
-            InsertIntoPanel<AddInvoice>();
+            InsertIntoPanel<AddInvoiceScreen>();
         }
     }
 }
