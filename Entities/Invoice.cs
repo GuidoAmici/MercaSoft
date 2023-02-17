@@ -4,11 +4,17 @@
     {
         public int ID { get; internal set; }
         public DateTime Date { get; internal set; }
-        public Company Company { get; internal set; }
+        public string? InvoiceNumber { get; internal set; }
+        public Company Company { get; set; }
         public List<InvoiceItem> Items { get; internal set; }
         public float SubtotalWithoutTaxes { get; internal set; }
         public float Taxes { get; internal set; }
         public float Total { get; internal set; }
+
+        public Invoice()
+        {
+
+        }
 
         public Invoice(int id, DateTime date, Company company, List<InvoiceItem> items)
         {
