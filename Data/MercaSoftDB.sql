@@ -23,32 +23,28 @@ GO
 Insert into Users (Username, Password, Email) values ('adz', 'adz', 'adz@adz.com')
 Go
 
-Create table Suppliers(
+Create table Companies(
 	ID int not null identity,
 	Name varchar(50) not null,
+	IsClient bit not null,
+	IsSupplier bit not null,
 	PRIMARY KEY (ID)
 )
 GO
 
-Create table Clients(
-	ID int not null identity,
-	Name varchar(50) not null,
-	PRIMARY KEY (ID)
-)
-GO
-
-Insert into Clients(Name) values
-('Grow Sweet Grow'),
-('Arbol Viejo'),
-('Buen Consejo')
+Insert into Companies(Name,IsClient,IsSupplier) values
+('Grow Sweet Grow',1,1),
+('Arbol Viejo',1,0),
+('Buen Consejo',1,0)
 GO
 
 Create table Invoices(
 	ID int not null identity,
 	Date DateTime not null default getdate(),
-	ClientID int not null,
+	CompanyID int not null,
+	IsSale bit not null,
 	PRIMARY KEY (ID),
-	FOREIGN KEY (ClientID) references Clients(ID)
+	FOREIGN KEY (CompanyID) references Companies(ID)
 )
 GO
 
@@ -103,12 +99,12 @@ Create table ItemPriceHistory(
 )
 GO
 
-Create table ConsumedItems(
+Create table ConsumableItems(
 	ID int not null identity,
-	ConsumedItemID int not null,
+	ConsumableItemID int not null,
 	ProducedItemID int not null,
 	PRIMARY KEY (ID),
-	FOREIGN KEY (ConsumedItemID) references Items(ID),
+	FOREIGN KEY (ConsumableItemID) references Items(ID),
 	FOREIGN KEY (ProducedItemID) references Items(ID)
 )
 GO
@@ -144,4 +140,4 @@ Create table LogHistory(
 )
 GO
 
-select * from Categories
+select * from LogHistory
