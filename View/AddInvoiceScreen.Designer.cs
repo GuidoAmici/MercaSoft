@@ -143,6 +143,7 @@
             this.cmbClients.Name = "cmbClients";
             this.cmbClients.Size = new System.Drawing.Size(279, 40);
             this.cmbClients.TabIndex = 10;
+            this.cmbClients.SelectedIndexChanged += new System.EventHandler(this.cmbClients_SelectedIndexChanged);
             // 
             // btnSave
             // 
@@ -209,6 +210,9 @@
             // 
             // dgvInvoiceItems
             // 
+            this.dgvInvoiceItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvInvoiceItems.AutoGenerateColumns = false;
             this.dgvInvoiceItems.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.dgvInvoiceItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -219,11 +223,12 @@
             this.taxesDataGridViewTextBoxColumn,
             this.subtotalWithTaxesDataGridViewTextBoxColumn});
             this.dgvInvoiceItems.DataSource = this.invoiceItemBindingSource;
-            this.dgvInvoiceItems.Location = new System.Drawing.Point(63, 181);
+            this.dgvInvoiceItems.Location = new System.Drawing.Point(63, 197);
+            this.dgvInvoiceItems.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
             this.dgvInvoiceItems.Name = "dgvInvoiceItems";
             this.dgvInvoiceItems.ReadOnly = true;
             this.dgvInvoiceItems.RowTemplate.Height = 25;
-            this.dgvInvoiceItems.Size = new System.Drawing.Size(657, 107);
+            this.dgvInvoiceItems.Size = new System.Drawing.Size(657, 86);
             this.dgvInvoiceItems.TabIndex = 15;
             // 
             // itemDataGridViewTextBoxColumn
@@ -278,6 +283,8 @@
             // 
             // cmbItems
             // 
+            this.cmbItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.cmbItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbItems.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -321,9 +328,9 @@
             this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddItem.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
-            this.btnAddItem.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            this.btnAddItem.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnAddItem.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
-            this.btnAddItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddItem.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnAddItem.IconSize = 30;
             this.btnAddItem.Location = new System.Drawing.Point(611, 135);
             this.btnAddItem.Name = "btnAddItem";

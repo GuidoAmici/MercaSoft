@@ -1,20 +1,32 @@
-﻿using Entities;
+﻿using Control;
+using Entities;
 
 namespace View
 {
     public partial class AddInvoiceScreen : BaseForm
     {
         private Invoice Invoice;
+        private Item SelectedItem;
+        private decimal Quantity;
 
         public AddInvoiceScreen()
         {
+            Invoice = new();
             InitializeComponent();
-            Reload();
+            ReloadCompanies();
+            ReloadDGV();
         }
 
-        private void Reload()
+        private void ReloadCompanies()
         {
-            //TODO Load companies with client attribute true
+            foreach (Company company in Info.LoadClients())
+            {
+                cmbClients.Items.Add(company);
+            }
+        }
+
+        private void ReloadDGV()
+        {
             dgvInvoiceItems.Refresh();
         }
 
@@ -22,9 +34,8 @@ namespace View
         {
             if (dgvInvoiceItems.Rows.Count < 0 && cmbClients.SelectedIndex != -1)
             {
-
+                //TODO Add invoice Save function Info.UploadInvoice(item);
             }
-            //TODO Add invoice Save function Info.UploadInvoice(item);
         }
 
         private void cmbItems_SelectedIndexChanged(object sender, EventArgs e)
@@ -34,10 +45,17 @@ namespace View
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            Item selectedItem = (Item)cmbItems.SelectedItem;
-            decimal quantity = nudQuantity.Value;
-            InvoiceItem invoiceItem = new(-1, selectedItem, (int)quantity, null);
-            Reload();
+            if (cmbItems.SelectedIndex > -1)
+                SelectedItem = (Item)cmbItems.SelectedItem;
+            Quantity = nudQuantity.Value;
+            InvoiceItem invoiceItem = new(-1, SelectedItem, (int)Quantity, null);
+            ReloadDGV();
+        }
+
+        private void cmbClients_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbClients.SelectedIndex > -1)
+                Invoice.Company = (Company)cmbClients.SelectedItem;
         }
     }
 }

@@ -30,7 +30,7 @@ namespace View
 
         private void InsertIntoPanel<InsertedForm>() where InsertedForm : Form, new()
         {
-            Form formInPanel;
+            Form? formInPanel;
             formInPanel = mainPanel.Controls.OfType<InsertedForm>().FirstOrDefault();
 
             if (formInPanel != null)
