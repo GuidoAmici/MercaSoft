@@ -1,5 +1,5 @@
-﻿using Entities;
-using Data;
+﻿using Data;
+using Entities;
 
 namespace Control
 {
@@ -17,6 +17,17 @@ namespace Control
                         list.Remove(obj);
                     }
                 }
+            }
+            return list;
+        }
+
+        public static List<Company> LoadClients()
+        {
+            List<Company> list = CompanyDao.GetCompanies();
+            foreach (Company company in list)
+            {
+                if (!company.IsClient)
+                    list.Remove(company);
             }
             return list;
         }
