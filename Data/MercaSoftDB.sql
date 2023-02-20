@@ -20,7 +20,9 @@ Create table Users(
 )
 GO
 
-Insert into Users (Username, Password, Email) values ('adz', 'adz', 'adz@adz.com')
+Insert into Users (Username, Password, Email) values 
+('adz','adz','adz@adz.com'),
+('asd','asd','asdasd.com')
 Go
 
 Create table Companies(
