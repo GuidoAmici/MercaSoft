@@ -53,7 +53,7 @@
             this.chkIsForSale.Location = new System.Drawing.Point(61, 252);
             this.chkIsForSale.Name = "chkIsForSale";
             this.chkIsForSale.Size = new System.Drawing.Size(185, 23);
-            this.chkIsForSale.TabIndex = 0;
+            this.chkIsForSale.TabIndex = 5;
             this.chkIsForSale.Text = "¿Artículo para la venta?";
             this.chkIsForSale.UseVisualStyleBackColor = false;
             this.chkIsForSale.CheckedChanged += new System.EventHandler(this.chkIsForSale_CheckedChanged);
@@ -65,13 +65,12 @@
             this.txtItemName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtItemName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtItemName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtItemName.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtItemName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.txtItemName.Location = new System.Drawing.Point(63, 63);
             this.txtItemName.MaxLength = 50;
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.PlaceholderText = "Obligatorio";
-            this.txtItemName.Size = new System.Drawing.Size(280, 39);
+            this.txtItemName.Size = new System.Drawing.Size(280, 25);
             this.txtItemName.TabIndex = 2;
             this.txtItemName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -84,7 +83,7 @@
             this.lblItemName.Location = new System.Drawing.Point(63, 41);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(145, 19);
-            this.lblItemName.TabIndex = 3;
+            this.lblItemName.TabIndex = 1;
             this.lblItemName.Text = "Nombre del artículo";
             // 
             // lblCodeName
@@ -106,14 +105,14 @@
             this.txtCodeName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCodeName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtCodeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodeName.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCodeName.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCodeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.txtCodeName.Location = new System.Drawing.Point(441, 63);
             this.txtCodeName.MaxLength = 50;
             this.txtCodeName.Name = "txtCodeName";
             this.txtCodeName.PlaceholderText = "Opcional";
-            this.txtCodeName.Size = new System.Drawing.Size(280, 39);
-            this.txtCodeName.TabIndex = 4;
+            this.txtCodeName.Size = new System.Drawing.Size(280, 25);
+            this.txtCodeName.TabIndex = 9;
             this.txtCodeName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblSalePrice
@@ -125,7 +124,7 @@
             this.lblSalePrice.Location = new System.Drawing.Point(61, 284);
             this.lblSalePrice.Name = "lblSalePrice";
             this.lblSalePrice.Size = new System.Drawing.Size(114, 19);
-            this.lblSalePrice.TabIndex = 7;
+            this.lblSalePrice.TabIndex = 6;
             this.lblSalePrice.Text = "Precio de venta";
             this.lblSalePrice.Visible = false;
             // 
@@ -137,14 +136,13 @@
             this.txtSalePrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtSalePrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSalePrice.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.txtSalePrice.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSalePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.txtSalePrice.Location = new System.Drawing.Point(61, 306);
             this.txtSalePrice.MaxLength = 30;
             this.txtSalePrice.Name = "txtSalePrice";
             this.txtSalePrice.PlaceholderText = "Obligatorio";
-            this.txtSalePrice.Size = new System.Drawing.Size(280, 39);
-            this.txtSalePrice.TabIndex = 6;
+            this.txtSalePrice.Size = new System.Drawing.Size(280, 25);
+            this.txtSalePrice.TabIndex = 7;
             this.txtSalePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSalePrice.Visible = false;
             // 
@@ -157,7 +155,7 @@
             this.label1.Location = new System.Drawing.Point(61, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 19);
-            this.label1.TabIndex = 9;
+            this.label1.TabIndex = 3;
             this.label1.Text = "Categoría";
             // 
             // txtBarCode
@@ -167,14 +165,13 @@
             this.txtBarCode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBarCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtBarCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBarCode.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBarCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.txtBarCode.Location = new System.Drawing.Point(441, 155);
             this.txtBarCode.MaxLength = 50;
             this.txtBarCode.Name = "txtBarCode";
             this.txtBarCode.PlaceholderText = "Opcional";
-            this.txtBarCode.Size = new System.Drawing.Size(280, 39);
-            this.txtBarCode.TabIndex = 8;
+            this.txtBarCode.Size = new System.Drawing.Size(280, 25);
+            this.txtBarCode.TabIndex = 11;
             this.txtBarCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblBarCode
@@ -186,7 +183,7 @@
             this.lblBarCode.Location = new System.Drawing.Point(441, 133);
             this.lblBarCode.Name = "lblBarCode";
             this.lblBarCode.Size = new System.Drawing.Size(126, 19);
-            this.lblBarCode.TabIndex = 9;
+            this.lblBarCode.TabIndex = 10;
             this.lblBarCode.Text = "Código de barras";
             // 
             // cmbCategories
@@ -194,13 +191,13 @@
             this.cmbCategories.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbCategories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.cmbCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbCategories.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cmbCategories.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.cmbCategories.FormattingEnabled = true;
             this.cmbCategories.Location = new System.Drawing.Point(62, 154);
             this.cmbCategories.Name = "cmbCategories";
-            this.cmbCategories.Size = new System.Drawing.Size(279, 40);
-            this.cmbCategories.TabIndex = 10;
+            this.cmbCategories.Size = new System.Drawing.Size(279, 29);
+            this.cmbCategories.TabIndex = 4;
             // 
             // txtDescription
             // 
@@ -209,7 +206,6 @@
             this.txtDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescription.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.txtDescription.Location = new System.Drawing.Point(441, 249);
             this.txtDescription.MaxLength = 200;
@@ -217,7 +213,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PlaceholderText = "Describa el artículo";
             this.txtDescription.Size = new System.Drawing.Size(280, 96);
-            this.txtDescription.TabIndex = 4;
+            this.txtDescription.TabIndex = 13;
             this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblDescription
@@ -229,7 +225,7 @@
             this.lblDescription.Location = new System.Drawing.Point(441, 227);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(87, 19);
-            this.lblDescription.TabIndex = 5;
+            this.lblDescription.TabIndex = 12;
             this.lblDescription.Text = "Descripción";
             // 
             // btnSave
@@ -247,7 +243,7 @@
             this.btnSave.Location = new System.Drawing.Point(312, 361);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(160, 46);
-            this.btnSave.TabIndex = 11;
+            this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Guardar";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

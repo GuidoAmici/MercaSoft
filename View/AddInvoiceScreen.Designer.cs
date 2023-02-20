@@ -52,36 +52,36 @@
             this.nudQuantity = new System.Windows.Forms.NumericUpDown();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.btnAddItem = new View.CustomButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSubtotal
             // 
             this.txtSubtotal.AcceptsReturn = true;
             this.txtSubtotal.AcceptsTab = true;
-            this.txtSubtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSubtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSubtotal.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSubtotal.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSubtotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
-            this.txtSubtotal.Location = new System.Drawing.Point(63, 325);
+            this.txtSubtotal.Location = new System.Drawing.Point(0, 22);
             this.txtSubtotal.MaxLength = 50;
             this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.Size = new System.Drawing.Size(180, 39);
-            this.txtSubtotal.TabIndex = 2;
+            this.txtSubtotal.Size = new System.Drawing.Size(180, 29);
+            this.txtSubtotal.TabIndex = 12;
             this.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblSubtotal
             // 
-            this.lblSubtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSubtotal.AutoSize = true;
             this.lblSubtotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblSubtotal.Location = new System.Drawing.Point(63, 303);
+            this.lblSubtotal.Location = new System.Drawing.Point(0, 0);
             this.lblSubtotal.Name = "lblSubtotal";
             this.lblSubtotal.Size = new System.Drawing.Size(65, 19);
-            this.lblSubtotal.TabIndex = 3;
+            this.lblSubtotal.TabIndex = 11;
             this.lblSubtotal.Text = "Subtotal";
             // 
             // lblInvoiceNumber
@@ -91,7 +91,7 @@
             this.lblInvoiceNumber.Location = new System.Drawing.Point(440, 31);
             this.lblInvoiceNumber.Name = "lblInvoiceNumber";
             this.lblInvoiceNumber.Size = new System.Drawing.Size(97, 19);
-            this.lblInvoiceNumber.TabIndex = 5;
+            this.lblInvoiceNumber.TabIndex = 3;
             this.lblInvoiceNumber.Text = "N° de factura";
             // 
             // lblClients
@@ -102,47 +102,45 @@
             this.lblClients.Location = new System.Drawing.Point(63, 30);
             this.lblClients.Name = "lblClients";
             this.lblClients.Size = new System.Drawing.Size(55, 19);
-            this.lblClients.TabIndex = 9;
+            this.lblClients.TabIndex = 1;
             this.lblClients.Text = "Cliente";
             // 
             // txtTaxes
             // 
             this.txtTaxes.AcceptsReturn = true;
             this.txtTaxes.AcceptsTab = true;
-            this.txtTaxes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTaxes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtTaxes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTaxes.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTaxes.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtTaxes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
-            this.txtTaxes.Location = new System.Drawing.Point(304, 325);
+            this.txtTaxes.Location = new System.Drawing.Point(241, 22);
             this.txtTaxes.MaxLength = 50;
             this.txtTaxes.Name = "txtTaxes";
-            this.txtTaxes.Size = new System.Drawing.Size(180, 39);
-            this.txtTaxes.TabIndex = 8;
+            this.txtTaxes.Size = new System.Drawing.Size(180, 29);
+            this.txtTaxes.TabIndex = 14;
             this.txtTaxes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblTaxes
             // 
-            this.lblTaxes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTaxes.AutoSize = true;
             this.lblTaxes.BackColor = System.Drawing.Color.Transparent;
-            this.lblTaxes.Location = new System.Drawing.Point(304, 303);
+            this.lblTaxes.Location = new System.Drawing.Point(241, 0);
             this.lblTaxes.Name = "lblTaxes";
             this.lblTaxes.Size = new System.Drawing.Size(77, 19);
-            this.lblTaxes.TabIndex = 9;
+            this.lblTaxes.TabIndex = 13;
             this.lblTaxes.Text = "Impuestos";
             // 
             // cmbClients
             // 
             this.cmbClients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.cmbClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbClients.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cmbClients.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbClients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.cmbClients.FormattingEnabled = true;
             this.cmbClients.Location = new System.Drawing.Point(63, 52);
             this.cmbClients.Name = "cmbClients";
-            this.cmbClients.Size = new System.Drawing.Size(279, 40);
-            this.cmbClients.TabIndex = 10;
+            this.cmbClients.Size = new System.Drawing.Size(279, 29);
+            this.cmbClients.TabIndex = 2;
             this.cmbClients.SelectedIndexChanged += new System.EventHandler(this.cmbClients_SelectedIndexChanged);
             // 
             // btnSave
@@ -158,9 +156,10 @@
             this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSave.IconSize = 30;
             this.btnSave.Location = new System.Drawing.Point(312, 391);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(160, 46);
-            this.btnSave.TabIndex = 11;
+            this.btnSave.TabIndex = 17;
             this.btnSave.Text = "Guardar";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -169,29 +168,27 @@
             // 
             // lblTotal
             // 
-            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.AutoSize = true;
             this.lblTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotal.Location = new System.Drawing.Point(540, 303);
+            this.lblTotal.Location = new System.Drawing.Point(477, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(42, 19);
-            this.lblTotal.TabIndex = 13;
+            this.lblTotal.TabIndex = 15;
             this.lblTotal.Text = "Total";
             // 
             // txtTotal
             // 
             this.txtTotal.AcceptsReturn = true;
             this.txtTotal.AcceptsTab = true;
-            this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotal.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTotal.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
-            this.txtTotal.Location = new System.Drawing.Point(540, 325);
+            this.txtTotal.Location = new System.Drawing.Point(477, 22);
             this.txtTotal.MaxLength = 50;
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(180, 39);
-            this.txtTotal.TabIndex = 12;
+            this.txtTotal.Size = new System.Drawing.Size(180, 29);
+            this.txtTotal.TabIndex = 16;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtInvoiceNumber
@@ -200,12 +197,12 @@
             this.txtInvoiceNumber.AcceptsTab = true;
             this.txtInvoiceNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtInvoiceNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtInvoiceNumber.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtInvoiceNumber.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtInvoiceNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.txtInvoiceNumber.Location = new System.Drawing.Point(440, 53);
             this.txtInvoiceNumber.Name = "txtInvoiceNumber";
-            this.txtInvoiceNumber.Size = new System.Drawing.Size(280, 39);
-            this.txtInvoiceNumber.TabIndex = 14;
+            this.txtInvoiceNumber.Size = new System.Drawing.Size(280, 29);
+            this.txtInvoiceNumber.TabIndex = 4;
             this.txtInvoiceNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgvInvoiceItems
@@ -223,13 +220,13 @@
             this.taxesDataGridViewTextBoxColumn,
             this.subtotalWithTaxesDataGridViewTextBoxColumn});
             this.dgvInvoiceItems.DataSource = this.invoiceItemBindingSource;
-            this.dgvInvoiceItems.Location = new System.Drawing.Point(63, 197);
+            this.dgvInvoiceItems.Location = new System.Drawing.Point(63, 169);
             this.dgvInvoiceItems.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
             this.dgvInvoiceItems.Name = "dgvInvoiceItems";
             this.dgvInvoiceItems.ReadOnly = true;
             this.dgvInvoiceItems.RowTemplate.Height = 25;
-            this.dgvInvoiceItems.Size = new System.Drawing.Size(657, 86);
-            this.dgvInvoiceItems.TabIndex = 15;
+            this.dgvInvoiceItems.Size = new System.Drawing.Size(657, 134);
+            this.dgvInvoiceItems.TabIndex = 10;
             // 
             // itemDataGridViewTextBoxColumn
             // 
@@ -275,10 +272,10 @@
             this.lblItem.AutoSize = true;
             this.lblItem.BackColor = System.Drawing.Color.Transparent;
             this.lblItem.ForeColor = System.Drawing.Color.White;
-            this.lblItem.Location = new System.Drawing.Point(63, 113);
+            this.lblItem.Location = new System.Drawing.Point(63, 95);
             this.lblItem.Name = "lblItem";
             this.lblItem.Size = new System.Drawing.Size(62, 19);
-            this.lblItem.TabIndex = 16;
+            this.lblItem.TabIndex = 5;
             this.lblItem.Text = "Artículo";
             // 
             // cmbItems
@@ -287,25 +284,25 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.cmbItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbItems.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbItems.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.cmbItems.FormattingEnabled = true;
-            this.cmbItems.Location = new System.Drawing.Point(63, 135);
+            this.cmbItems.Location = new System.Drawing.Point(63, 117);
             this.cmbItems.Name = "cmbItems";
-            this.cmbItems.Size = new System.Drawing.Size(409, 40);
-            this.cmbItems.TabIndex = 17;
+            this.cmbItems.Size = new System.Drawing.Size(409, 29);
+            this.cmbItems.TabIndex = 6;
             this.cmbItems.SelectedIndexChanged += new System.EventHandler(this.cmbItems_SelectedIndexChanged);
             // 
             // nudQuantity
             // 
             this.nudQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.nudQuantity.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nudQuantity.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nudQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
-            this.nudQuantity.Location = new System.Drawing.Point(503, 135);
+            this.nudQuantity.Location = new System.Drawing.Point(503, 116);
             this.nudQuantity.Name = "nudQuantity";
-            this.nudQuantity.Size = new System.Drawing.Size(79, 39);
-            this.nudQuantity.TabIndex = 18;
+            this.nudQuantity.Size = new System.Drawing.Size(79, 29);
+            this.nudQuantity.TabIndex = 8;
             this.nudQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblQuantity
@@ -314,10 +311,10 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.BackColor = System.Drawing.Color.Transparent;
             this.lblQuantity.ForeColor = System.Drawing.Color.White;
-            this.lblQuantity.Location = new System.Drawing.Point(503, 113);
+            this.lblQuantity.Location = new System.Drawing.Point(503, 94);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(69, 19);
-            this.lblQuantity.TabIndex = 19;
+            this.lblQuantity.TabIndex = 7;
             this.lblQuantity.Text = "Cantidad";
             // 
             // btnAddItem
@@ -326,21 +323,35 @@
             this.btnAddItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.btnAddItem.FlatAppearance.BorderSize = 0;
             this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddItem.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddItem.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.btnAddItem.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnAddItem.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.btnAddItem.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnAddItem.IconSize = 30;
-            this.btnAddItem.Location = new System.Drawing.Point(611, 135);
+            this.btnAddItem.IconSize = 22;
+            this.btnAddItem.Location = new System.Drawing.Point(611, 116);
             this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(109, 40);
-            this.btnAddItem.TabIndex = 20;
+            this.btnAddItem.Size = new System.Drawing.Size(109, 29);
+            this.btnAddItem.TabIndex = 9;
             this.btnAddItem.Text = "Add";
             this.btnAddItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddItem.UseVisualStyleBackColor = true;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.lblSubtotal);
+            this.panel1.Controls.Add(this.lblTotal);
+            this.panel1.Controls.Add(this.txtTotal);
+            this.panel1.Controls.Add(this.txtTaxes);
+            this.panel1.Controls.Add(this.lblTaxes);
+            this.panel1.Controls.Add(this.txtSubtotal);
+            this.panel1.Location = new System.Drawing.Point(63, 323);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(658, 55);
+            this.panel1.TabIndex = 18;
             // 
             // AddInvoiceScreen
             // 
@@ -348,6 +359,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(784, 470);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAddItem);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.nudQuantity);
@@ -358,18 +370,14 @@
             this.Controls.Add(this.lblClients);
             this.Controls.Add(this.cmbClients);
             this.Controls.Add(this.lblInvoiceNumber);
-            this.Controls.Add(this.lblSubtotal);
-            this.Controls.Add(this.txtSubtotal);
-            this.Controls.Add(this.lblTaxes);
-            this.Controls.Add(this.txtTaxes);
-            this.Controls.Add(this.txtTotal);
-            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnSave);
             this.Name = "AddInvoiceScreen";
             this.Text = "Agregar nueva factura";
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,5 +407,6 @@
         private NumericUpDown nudQuantity;
         private Label lblQuantity;
         private CustomButton btnAddItem;
+        private Panel panel1;
     }
 }

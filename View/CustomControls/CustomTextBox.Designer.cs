@@ -33,7 +33,7 @@
             this.AcceptsTab = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Nirmala UI", 12, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.Size = new System.Drawing.Size(280, 40);
             this.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

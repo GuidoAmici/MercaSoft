@@ -35,6 +35,18 @@ namespace View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtItemName.Text == string.Empty)
+            {
+                txtItemName.Focus();
+                return;
+            }
+
+            if (cmbCategories.SelectedIndex == -1)
+            {
+                cmbCategories.DroppedDown = true;
+                return;
+            }
+
             if (txtItemName.Text != string.Empty
                 && ((chkIsForSale.Checked && txtSalePrice.Text != string.Empty) || chkIsForSale.Checked)
                 )
