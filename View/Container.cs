@@ -113,5 +113,15 @@ namespace View
         {
             InsertIntoPanel<AddInvoiceScreen>();
         }
+
+        private void submenuSalesHistory_Click(object sender, EventArgs e)
+        {
+            InsertIntoPanel<SalesHistoryScreen>();
+        }
+
+        private void submenuAddProductionOrder_Click(object sender, EventArgs e)
+        {
+            InsertIntoPanel<AddProductionOrderScreen>();
+        }
     }
 }

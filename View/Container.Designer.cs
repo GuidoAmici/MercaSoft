@@ -36,15 +36,19 @@
             this.submenuSalesHistory = new View.CustomSubmenuItem();
             this.menuProduction = new View.CustomMenuItem();
             this.submenuAddProductionRow = new View.CustomSubmenuItem();
+            this.submenuProductionOrders = new View.CustomSubmenuItem();
             this.submenuAddProductionOrder = new View.CustomSubmenuItem();
-            this.submenuProductionOrdersHistory = new View.CustomSubmenuItem();
+            this.submenuProductionOrderHistory = new View.CustomSubmenuItem();
             this.menuInventory = new View.CustomMenuItem();
             this.btnAddNewItem = new View.CustomSubmenuItem();
             this.submenuCheckInventory = new View.CustomSubmenuItem();
             this.submenuMoveHistory = new View.CustomSubmenuItem();
+            this.customSubmenuItem4 = new View.CustomSubmenuItem();
             this.menuBuys = new View.CustomMenuItem();
             this.submenuAddBuyInvoice = new View.CustomSubmenuItem();
             this.submenuBuyHistory = new View.CustomSubmenuItem();
+            this.menuLogistics = new View.CustomMenuItem();
+            this.customSubmenuItem1 = new View.CustomSubmenuItem();
             this.menuMyUser = new View.CustomMenuItem();
             this.btnLogOut = new View.CustomSubmenuItem();
             this.iconMenuItem1 = new View.CustomSubmenuItem();
@@ -75,6 +79,7 @@
             this.menuProduction,
             this.menuInventory,
             this.menuBuys,
+            this.menuLogistics,
             this.menuMyUser});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -122,7 +127,7 @@
             this.submenuAddSale.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.submenuAddSale.Name = "submenu";
             this.submenuAddSale.Size = new System.Drawing.Size(207, 26);
-            this.submenuAddSale.Text = "Registrar factura";
+            this.submenuAddSale.Text = "Emitir factura";
             this.submenuAddSale.Click += new System.EventHandler(this.submenuAddSale_Click);
             // 
             // submenuSalesHistory
@@ -136,14 +141,14 @@
             this.submenuSalesHistory.Name = "submenu";
             this.submenuSalesHistory.Size = new System.Drawing.Size(207, 26);
             this.submenuSalesHistory.Text = "Historial de ventas";
+            this.submenuSalesHistory.Click += new System.EventHandler(this.submenuSalesHistory_Click);
             // 
             // menuProduction
             // 
             this.menuProduction.AutoSize = false;
             this.menuProduction.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.submenuAddProductionRow,
-            this.submenuAddProductionOrder,
-            this.submenuProductionOrdersHistory});
+            this.submenuProductionOrders});
             this.menuProduction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.menuProduction.IconChar = FontAwesome.Sharp.IconChar.Screwdriver;
             this.menuProduction.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
@@ -163,8 +168,23 @@
             this.submenuAddProductionRow.IconSize = 20;
             this.submenuAddProductionRow.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.submenuAddProductionRow.Name = "submenu";
-            this.submenuAddProductionRow.Size = new System.Drawing.Size(298, 26);
+            this.submenuAddProductionRow.Size = new System.Drawing.Size(286, 26);
             this.submenuAddProductionRow.Text = "Registrar tanda de producción";
+            // 
+            // submenuProductionOrders
+            // 
+            this.submenuProductionOrders.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.submenuAddProductionOrder,
+            this.submenuProductionOrderHistory});
+            this.submenuProductionOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.submenuProductionOrders.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.submenuProductionOrders.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.submenuProductionOrders.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.submenuProductionOrders.IconSize = 20;
+            this.submenuProductionOrders.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.submenuProductionOrders.Name = "submenu";
+            this.submenuProductionOrders.Size = new System.Drawing.Size(286, 26);
+            this.submenuProductionOrders.Text = "Ordenes de producción";
             // 
             // submenuAddProductionOrder
             // 
@@ -175,20 +195,21 @@
             this.submenuAddProductionOrder.IconSize = 20;
             this.submenuAddProductionOrder.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.submenuAddProductionOrder.Name = "submenu";
-            this.submenuAddProductionOrder.Size = new System.Drawing.Size(298, 26);
-            this.submenuAddProductionOrder.Text = "Nueva orden de producción";
+            this.submenuAddProductionOrder.Size = new System.Drawing.Size(209, 26);
+            this.submenuAddProductionOrder.Text = "Emitir nueva orden";
+            this.submenuAddProductionOrder.Click += new System.EventHandler(this.submenuAddProductionOrder_Click);
             // 
-            // submenuProductionOrdersHistory
+            // submenuProductionOrderHistory
             // 
-            this.submenuProductionOrdersHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
-            this.submenuProductionOrdersHistory.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.submenuProductionOrdersHistory.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
-            this.submenuProductionOrdersHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.submenuProductionOrdersHistory.IconSize = 20;
-            this.submenuProductionOrdersHistory.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.submenuProductionOrdersHistory.Name = "submenu";
-            this.submenuProductionOrdersHistory.Size = new System.Drawing.Size(298, 26);
-            this.submenuProductionOrdersHistory.Text = "Historial órdenes de producción";
+            this.submenuProductionOrderHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.submenuProductionOrderHistory.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.submenuProductionOrderHistory.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.submenuProductionOrderHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.submenuProductionOrderHistory.IconSize = 20;
+            this.submenuProductionOrderHistory.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.submenuProductionOrderHistory.Name = "submenu";
+            this.submenuProductionOrderHistory.Size = new System.Drawing.Size(209, 26);
+            this.submenuProductionOrderHistory.Text = "Ver historial";
             // 
             // menuInventory
             // 
@@ -196,7 +217,8 @@
             this.menuInventory.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAddNewItem,
             this.submenuCheckInventory,
-            this.submenuMoveHistory});
+            this.submenuMoveHistory,
+            this.customSubmenuItem4});
             this.menuInventory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.menuInventory.IconChar = FontAwesome.Sharp.IconChar.BoxesAlt;
             this.menuInventory.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
@@ -245,6 +267,18 @@
             this.submenuMoveHistory.Size = new System.Drawing.Size(251, 26);
             this.submenuMoveHistory.Text = "Historial de movimientos";
             // 
+            // customSubmenuItem4
+            // 
+            this.customSubmenuItem4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.customSubmenuItem4.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.customSubmenuItem4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.customSubmenuItem4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.customSubmenuItem4.IconSize = 20;
+            this.customSubmenuItem4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.customSubmenuItem4.Name = "submenu";
+            this.customSubmenuItem4.Size = new System.Drawing.Size(251, 26);
+            this.customSubmenuItem4.Text = "Devoluciones";
+            // 
             // menuBuys
             // 
             this.menuBuys.AutoSize = false;
@@ -284,6 +318,33 @@
             this.submenuBuyHistory.Name = "submenu";
             this.submenuBuyHistory.Size = new System.Drawing.Size(233, 26);
             this.submenuBuyHistory.Text = "Historial de compras";
+            // 
+            // menuLogistics
+            // 
+            this.menuLogistics.AutoSize = false;
+            this.menuLogistics.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customSubmenuItem1});
+            this.menuLogistics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.menuLogistics.IconChar = FontAwesome.Sharp.IconChar.Truck;
+            this.menuLogistics.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.menuLogistics.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuLogistics.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuLogistics.Name = "Menu";
+            this.menuLogistics.Size = new System.Drawing.Size(94, 80);
+            this.menuLogistics.Text = "Logística";
+            this.menuLogistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // customSubmenuItem1
+            // 
+            this.customSubmenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.customSubmenuItem1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.customSubmenuItem1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.customSubmenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.customSubmenuItem1.IconSize = 20;
+            this.customSubmenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.customSubmenuItem1.Name = "submenu";
+            this.customSubmenuItem1.Size = new System.Drawing.Size(170, 26);
+            this.customSubmenuItem1.Text = "Emitir remito";
             // 
             // menuMyUser
             // 
@@ -362,11 +423,15 @@
         private CustomSubmenuItem submenuAddSale;
         private CustomSubmenuItem submenuSalesHistory;
         private CustomSubmenuItem submenuAddProductionRow;
-        private CustomSubmenuItem submenuAddProductionOrder;
-        private CustomSubmenuItem submenuProductionOrdersHistory;
+        private CustomSubmenuItem submenuProductionOrders;
         private CustomSubmenuItem submenuCheckInventory;
         private CustomSubmenuItem submenuMoveHistory;
         private CustomSubmenuItem submenuAddBuyInvoice;
         private CustomSubmenuItem submenuBuyHistory;
+        private CustomMenuItem menuLogistics;
+        private CustomSubmenuItem customSubmenuItem1;
+        private CustomSubmenuItem submenuAddProductionOrder;
+        private CustomSubmenuItem submenuProductionOrderHistory;
+        private CustomSubmenuItem customSubmenuItem4;
     }
 }
