@@ -30,7 +30,7 @@ namespace View
 
         private void InsertIntoPanel<InsertedForm>() where InsertedForm : Form, new()
         {
-            Form? formInPanel;
+            InsertedForm? formInPanel;
             formInPanel = mainPanel.Controls.OfType<InsertedForm>().FirstOrDefault();
 
             if (formInPanel != null)
@@ -116,12 +116,22 @@ namespace View
 
         private void submenuSalesHistory_Click(object sender, EventArgs e)
         {
-            InsertIntoPanel<SalesHistoryScreen>();
+            InsertIntoPanel<InvoiceHistoryScreen>();
         }
 
         private void submenuAddProductionOrder_Click(object sender, EventArgs e)
         {
             InsertIntoPanel<AddProductionOrderScreen>();
+        }
+
+        private void submenuProductionOrderHistory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void submenuAddProductionRow_Click(object sender, EventArgs e)
+        {
+            InsertIntoPanel<AddProductionRowScreen>();
         }
     }
 }

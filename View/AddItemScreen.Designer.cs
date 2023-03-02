@@ -65,12 +65,13 @@
             this.txtItemName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtItemName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtItemName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtItemName.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtItemName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.txtItemName.Location = new System.Drawing.Point(63, 63);
             this.txtItemName.MaxLength = 50;
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.PlaceholderText = "Obligatorio";
-            this.txtItemName.Size = new System.Drawing.Size(280, 25);
+            this.txtItemName.Size = new System.Drawing.Size(280, 29);
             this.txtItemName.TabIndex = 2;
             this.txtItemName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -136,12 +137,13 @@
             this.txtSalePrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtSalePrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSalePrice.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtSalePrice.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSalePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.txtSalePrice.Location = new System.Drawing.Point(61, 306);
             this.txtSalePrice.MaxLength = 30;
             this.txtSalePrice.Name = "txtSalePrice";
             this.txtSalePrice.PlaceholderText = "Obligatorio";
-            this.txtSalePrice.Size = new System.Drawing.Size(280, 25);
+            this.txtSalePrice.Size = new System.Drawing.Size(280, 29);
             this.txtSalePrice.TabIndex = 7;
             this.txtSalePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSalePrice.Visible = false;
@@ -165,12 +167,13 @@
             this.txtBarCode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBarCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtBarCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBarCode.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBarCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.txtBarCode.Location = new System.Drawing.Point(441, 155);
             this.txtBarCode.MaxLength = 50;
             this.txtBarCode.Name = "txtBarCode";
             this.txtBarCode.PlaceholderText = "Opcional";
-            this.txtBarCode.Size = new System.Drawing.Size(280, 25);
+            this.txtBarCode.Size = new System.Drawing.Size(280, 29);
             this.txtBarCode.TabIndex = 11;
             this.txtBarCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -194,9 +197,9 @@
             this.cmbCategories.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.cmbCategories.FormattingEnabled = true;
-            this.cmbCategories.Location = new System.Drawing.Point(62, 154);
+            this.cmbCategories.Location = new System.Drawing.Point(63, 154);
             this.cmbCategories.Name = "cmbCategories";
-            this.cmbCategories.Size = new System.Drawing.Size(279, 29);
+            this.cmbCategories.Size = new System.Drawing.Size(280, 29);
             this.cmbCategories.TabIndex = 4;
             // 
             // txtDescription
@@ -206,6 +209,7 @@
             this.txtDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescription.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
             this.txtDescription.Location = new System.Drawing.Point(441, 249);
             this.txtDescription.MaxLength = 200;
