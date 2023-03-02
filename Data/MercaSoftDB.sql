@@ -61,7 +61,8 @@ GO
 insert into Categories (Name, IsActive) values 
 	('Medición', 1),
 	('Accesorios', 1),
-	('Merchandising', 1)
+	('Merchandising', 1),
+	('Insumos', 1)
 GO
 
 Create table Items(
@@ -70,12 +71,38 @@ Create table Items(
 	SalePrice float,
 	CategoryID int,
 	IsForSale bit not null,
+	Stock int not null,
 	Description varchar(100),
 	CodeName varchar(30),
 	BarCode int,
 	PRIMARY KEY (ID),
 	FOREIGN KEY (CategoryID) references Categories(ID)
 )
+GO
+
+Insert into Items (Name,CategoryID,IsForSale,Stock) values
+('Buffer pH 4.01 (50 ml)',1,1,0),
+('Buffer pH 6.86 (50 ml)',1,1,0),
+('Buffer pH 9.18 (50 ml)',1,1,0),
+('Buffer pH 4.01 (100 ml)',1,1,0),
+('Buffer pH 6.86 (100 ml)',1,1,0),
+('Buffer pH 9.18 (100 ml)',1,1,0),
+('Frasco etiquetado - Buffer pH 4.01 (50 ml)',4,0,0),
+('Frasco etiquetado - Buffer pH 6.86 (50 ml)',4,0,0),
+('Frasco etiquetado - Buffer pH 9.18 (50 ml)',4,0,0),
+('Frasco etiquetado - Buffer pH 4.01 (100 ml)',4,0,0),
+('Frasco etiquetado - Buffer pH 6.86 (100 ml)',4,0,0),
+('Frasco etiquetado - Buffer pH 9.18 (100 ml)',4,0,0),
+('Etiqueta - Buffer pH 4.01 (50 ml)',4,0,0),
+('Etiqueta - Buffer pH 6.86 (50 ml)',4,0,0),
+('Etiqueta - Buffer pH 9.18 (50 ml)',4,0,0),
+('Etiqueta - Buffer pH 4.01 (100 ml)',4,0,0),
+('Etiqueta - Buffer pH 6.86 (100 ml)',4,0,0),
+('Etiqueta - Buffer pH 9.18 (100 ml)',4,0,0),
+('Envase LevePET (50 ml - ambar)',4,0,0),
+('Envase LevePET (100 ml - ambar)',4,0,0),
+('Vaso medidor',4,0,0),
+('Tapa RP28 (blanca)',4,0,0)
 GO
 
 Create table ReferencePriceHistory(
