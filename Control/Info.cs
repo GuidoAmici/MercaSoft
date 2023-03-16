@@ -31,5 +31,20 @@ namespace Control
             }
             return list;
         }
+
+        public static List<Item> GetItemsForSale()
+        {
+            return ItemDao.GetItems(true);
+        }
+
+        public static List<Item> GetSupplies()
+        {
+            return ItemDao.GetItems(false);
+        }
+
+        public static List<Item> GetSupplies(Item itemProduced)
+        {
+            return ItemDao.GetSupplies(itemProduced);
+        }
     }
 }
