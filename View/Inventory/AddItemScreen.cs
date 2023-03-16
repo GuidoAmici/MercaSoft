@@ -35,6 +35,7 @@ namespace View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //TODO Add dgv for related supplies to the item
             if (txtItemName.Text == string.Empty)
             {
                 txtItemName.Focus();
