@@ -80,29 +80,62 @@ Create table Items(
 )
 GO
 
-Insert into Items (Name,CategoryID,IsForSale,Stock) values
-('Buffer pH 4.01 (50 ml)',1,1,0),
-('Buffer pH 6.86 (50 ml)',1,1,0),
-('Buffer pH 9.18 (50 ml)',1,1,0),
-('Buffer pH 4.01 (100 ml)',1,1,0),
-('Buffer pH 6.86 (100 ml)',1,1,0),
-('Buffer pH 9.18 (100 ml)',1,1,0),
-('Frasco etiquetado - Buffer pH 4.01 (50 ml)',4,0,0),
-('Frasco etiquetado - Buffer pH 6.86 (50 ml)',4,0,0),
-('Frasco etiquetado - Buffer pH 9.18 (50 ml)',4,0,0),
-('Frasco etiquetado - Buffer pH 4.01 (100 ml)',4,0,0),
-('Frasco etiquetado - Buffer pH 6.86 (100 ml)',4,0,0),
-('Frasco etiquetado - Buffer pH 9.18 (100 ml)',4,0,0),
-('Etiqueta - Buffer pH 4.01 (50 ml)',4,0,0),
-('Etiqueta - Buffer pH 6.86 (50 ml)',4,0,0),
-('Etiqueta - Buffer pH 9.18 (50 ml)',4,0,0),
-('Etiqueta - Buffer pH 4.01 (100 ml)',4,0,0),
-('Etiqueta - Buffer pH 6.86 (100 ml)',4,0,0),
-('Etiqueta - Buffer pH 9.18 (100 ml)',4,0,0),
-('Envase LevePET (50 ml - ambar)',4,0,0),
-('Envase LevePET (100 ml - ambar)',4,0,0),
-('Vaso medidor',4,0,0),
-('Tapa RP28 (blanca)',4,0,0)
+Insert into Items (ID,Name,CategoryID,IsForSale,Stock) values
+(1,'Buffer pH 4.01 (50 ml)',1,1,0),
+(2,'Buffer pH 6.86 (50 ml)',1,1,0),
+(3,'Buffer pH 9.18 (50 ml)',1,1,0),
+(4,'Buffer pH 4.01 (100 ml)',1,1,0),
+(5,'Buffer pH 6.86 (100 ml)',1,1,0),
+(6,'Buffer pH 9.18 (100 ml)',1,1,0),
+(7,'Frasco etiquetado - Buffer pH 4.01 (50 ml)',4,0,0),
+(8,'Frasco etiquetado - Buffer pH 6.86 (50 ml)',4,0,0),
+(9,'Frasco etiquetado - Buffer pH 9.18 (50 ml)',4,0,0),
+(10,'Frasco etiquetado - Buffer pH 4.01 (100 ml)',4,0,0),
+(11,'Frasco etiquetado - Buffer pH 6.86 (100 ml)',4,0,0),
+(12,'Frasco etiquetado - Buffer pH 9.18 (100 ml)',4,0,0),
+(13,'Etiqueta - Buffer pH 4.01 (50 ml)',4,0,0),
+(14,'Etiqueta - Buffer pH 6.86 (50 ml)',4,0,0),
+(15,'Etiqueta - Buffer pH 9.18 (50 ml)',4,0,0),
+(16,'Etiqueta - Buffer pH 4.01 (100 ml)',4,0,0),
+(17,'Etiqueta - Buffer pH 6.86 (100 ml)',4,0,0),
+(18,'Etiqueta - Buffer pH 9.18 (100 ml)',4,0,0),
+(19,'Envase LevePET (50 ml - ambar)',4,0,0),
+(20,'Envase LevePET (100 ml - ambar)',4,0,0),
+(21,'Tapa RP28 (blanca)',4,0,0),
+(22,'Vaso medidor',4,0,0),
+(23,'Solución (ml) - Buffer pH 4.01',4,0,0),
+(24,'Solución (ml) - Buffer pH 6.86',4,0,0),
+(25,'Solución (ml) - Buffer pH 9.18',4,0,0)
+GO
+
+Create table SupplyItems(
+	ID int not null identity,
+	ProducedItemID int not null,
+	SupplyItemID int not null,
+	Quantity int not null,
+	PRIMARY KEY (ID),
+	FOREIGN KEY (ProducedItemID) references Items(ID),
+	FOREIGN KEY (SupplyItemID) references Items(ID)
+)
+GO
+
+Insert into SupplyItems (ProducedItemID,SupplyItemID,Quantity) values
+	(7,13,1),
+	(7,19,1),
+	(1,7,1),
+	(1,21,1),
+	(1,22,1),
+	(1,23,50)
+GO
+
+Create table SupplierItems(
+	ID int not null identity,
+	ItemID int not null,
+	Price float not null,
+	Date DateTime not null default getdate(),
+	PRIMARY KEY (ID),
+	FOREIGN KEY (ItemID) references Items(ID)
+)
 GO
 
 Create table ReferencePriceHistory(
@@ -125,26 +158,6 @@ Create table ItemPriceHistory(
 	FOREIGN KEY (ItemID) references Items(ID),
 	FOREIGN KEY (AdditionReferencePriceID) references ReferencePriceHistory(ID),
 	FOREIGN KEY (DischargeReferencePriceID) references ReferencePriceHistory(ID)
-)
-GO
-
-Create table ConsumableItems(
-	ID int not null identity,
-	ConsumableItemID int not null,
-	ProducedItemID int not null,
-	PRIMARY KEY (ID),
-	FOREIGN KEY (ConsumableItemID) references Items(ID),
-	FOREIGN KEY (ProducedItemID) references Items(ID)
-)
-GO
-
-Create table SupplierItems(
-	ID int not null identity,
-	ItemID int not null,
-	Price float not null,
-	Date DateTime not null default getdate(),
-	PRIMARY KEY (ID),
-	FOREIGN KEY (ItemID) references Items(ID)
 )
 GO
 
