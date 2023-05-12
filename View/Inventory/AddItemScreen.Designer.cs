@@ -28,274 +28,260 @@
         /// </summary>
         private void InitializeComponent()
         {
-            chkIsForSale = new CheckBox();
-            txtItemName = new CustomTextBox();
-            lblItemName = new Label();
-            lblCodeName = new Label();
-            txtCodeName = new CustomTextBox();
-            lblSalePrice = new Label();
-            txtSalePrice = new CustomTextBox();
-            label1 = new Label();
-            txtBarCode = new CustomTextBox();
-            lblBarCode = new Label();
-            cmbCategories = new ComboBox();
-            txtDescription = new CustomTextBox();
-            lblDescription = new Label();
-            btnSave = new CustomButton();
-            checkBox1 = new CheckBox();
-            SuspendLayout();
+            this.chkIsForSale = new System.Windows.Forms.CheckBox();
+            this.txtItemName = new View.CustomTextBox();
+            this.lblItemName = new System.Windows.Forms.Label();
+            this.lblCodeName = new System.Windows.Forms.Label();
+            this.txtCodeName = new View.CustomTextBox();
+            this.lblSalePrice = new System.Windows.Forms.Label();
+            this.txtSalePrice = new View.CustomTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBarCode = new View.CustomTextBox();
+            this.lblBarCode = new System.Windows.Forms.Label();
+            this.cmbCategories = new System.Windows.Forms.ComboBox();
+            this.txtDescription = new View.CustomTextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.btnSave = new View.CustomButton();
+            this.SuspendLayout();
             // 
             // chkIsForSale
             // 
-            chkIsForSale.Anchor = AnchorStyles.None;
-            chkIsForSale.AutoSize = true;
-            chkIsForSale.BackColor = Color.Transparent;
-            chkIsForSale.ForeColor = Color.White;
-            chkIsForSale.Location = new Point(61, 252);
-            chkIsForSale.Name = "chkIsForSale";
-            chkIsForSale.Size = new Size(185, 23);
-            chkIsForSale.TabIndex = 5;
-            chkIsForSale.Text = "¿Artículo para la venta?";
-            chkIsForSale.UseVisualStyleBackColor = false;
-            chkIsForSale.CheckedChanged += chkIsForSale_CheckedChanged;
+            this.chkIsForSale.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkIsForSale.AutoSize = true;
+            this.chkIsForSale.BackColor = System.Drawing.Color.Transparent;
+            this.chkIsForSale.ForeColor = System.Drawing.Color.White;
+            this.chkIsForSale.Location = new System.Drawing.Point(61, 252);
+            this.chkIsForSale.Name = "chkIsForSale";
+            this.chkIsForSale.Size = new System.Drawing.Size(185, 23);
+            this.chkIsForSale.TabIndex = 5;
+            this.chkIsForSale.Text = "¿Artículo para la venta?";
+            this.chkIsForSale.UseVisualStyleBackColor = false;
+            this.chkIsForSale.CheckedChanged += new System.EventHandler(this.chkIsForSale_CheckedChanged);
             // 
             // txtItemName
             // 
-            txtItemName.AcceptsReturn = true;
-            txtItemName.AcceptsTab = true;
-            txtItemName.Anchor = AnchorStyles.None;
-            txtItemName.BackColor = Color.FromArgb(35, 35, 35);
-            txtItemName.BorderStyle = BorderStyle.FixedSingle;
-            txtItemName.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtItemName.ForeColor = Color.FromArgb(0, 125, 250);
-            txtItemName.Location = new Point(63, 63);
-            txtItemName.MaxLength = 50;
-            txtItemName.Name = "txtItemName";
-            txtItemName.PlaceholderText = "Obligatorio";
-            txtItemName.Size = new Size(280, 29);
-            txtItemName.TabIndex = 2;
-            txtItemName.TextAlign = HorizontalAlignment.Center;
+            this.txtItemName.AcceptsReturn = true;
+            this.txtItemName.AcceptsTab = true;
+            this.txtItemName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtItemName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtItemName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtItemName.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtItemName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.txtItemName.Location = new System.Drawing.Point(63, 63);
+            this.txtItemName.MaxLength = 50;
+            this.txtItemName.Name = "txtItemName";
+            this.txtItemName.PlaceholderText = "Obligatorio";
+            this.txtItemName.Size = new System.Drawing.Size(280, 29);
+            this.txtItemName.TabIndex = 2;
+            this.txtItemName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblItemName
             // 
-            lblItemName.Anchor = AnchorStyles.None;
-            lblItemName.AutoSize = true;
-            lblItemName.BackColor = Color.Transparent;
-            lblItemName.ForeColor = Color.White;
-            lblItemName.Location = new Point(63, 41);
-            lblItemName.Name = "lblItemName";
-            lblItemName.Size = new Size(145, 19);
-            lblItemName.TabIndex = 1;
-            lblItemName.Text = "Nombre del artículo";
+            this.lblItemName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblItemName.AutoSize = true;
+            this.lblItemName.BackColor = System.Drawing.Color.Transparent;
+            this.lblItemName.ForeColor = System.Drawing.Color.White;
+            this.lblItemName.Location = new System.Drawing.Point(63, 41);
+            this.lblItemName.Name = "lblItemName";
+            this.lblItemName.Size = new System.Drawing.Size(145, 19);
+            this.lblItemName.TabIndex = 1;
+            this.lblItemName.Text = "Nombre del artículo";
             // 
             // lblCodeName
             // 
-            lblCodeName.Anchor = AnchorStyles.None;
-            lblCodeName.AutoSize = true;
-            lblCodeName.BackColor = Color.Transparent;
-            lblCodeName.ForeColor = Color.White;
-            lblCodeName.Location = new Point(441, 41);
-            lblCodeName.Name = "lblCodeName";
-            lblCodeName.Size = new Size(138, 19);
-            lblCodeName.TabIndex = 5;
-            lblCodeName.Text = "Código del artículo";
+            this.lblCodeName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCodeName.AutoSize = true;
+            this.lblCodeName.BackColor = System.Drawing.Color.Transparent;
+            this.lblCodeName.ForeColor = System.Drawing.Color.White;
+            this.lblCodeName.Location = new System.Drawing.Point(441, 41);
+            this.lblCodeName.Name = "lblCodeName";
+            this.lblCodeName.Size = new System.Drawing.Size(138, 19);
+            this.lblCodeName.TabIndex = 5;
+            this.lblCodeName.Text = "Código del artículo";
             // 
             // txtCodeName
             // 
-            txtCodeName.AcceptsReturn = true;
-            txtCodeName.AcceptsTab = true;
-            txtCodeName.Anchor = AnchorStyles.None;
-            txtCodeName.BackColor = Color.FromArgb(35, 35, 35);
-            txtCodeName.BorderStyle = BorderStyle.FixedSingle;
-            txtCodeName.Font = new Font("Nirmala UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCodeName.ForeColor = Color.FromArgb(0, 125, 250);
-            txtCodeName.Location = new Point(441, 63);
-            txtCodeName.MaxLength = 50;
-            txtCodeName.Name = "txtCodeName";
-            txtCodeName.PlaceholderText = "Opcional";
-            txtCodeName.Size = new Size(280, 25);
-            txtCodeName.TabIndex = 9;
-            txtCodeName.TextAlign = HorizontalAlignment.Center;
+            this.txtCodeName.AcceptsReturn = true;
+            this.txtCodeName.AcceptsTab = true;
+            this.txtCodeName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCodeName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtCodeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodeName.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCodeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.txtCodeName.Location = new System.Drawing.Point(441, 63);
+            this.txtCodeName.MaxLength = 50;
+            this.txtCodeName.Name = "txtCodeName";
+            this.txtCodeName.PlaceholderText = "Opcional";
+            this.txtCodeName.Size = new System.Drawing.Size(280, 25);
+            this.txtCodeName.TabIndex = 9;
+            this.txtCodeName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblSalePrice
             // 
-            lblSalePrice.Anchor = AnchorStyles.None;
-            lblSalePrice.AutoSize = true;
-            lblSalePrice.BackColor = Color.Transparent;
-            lblSalePrice.ForeColor = Color.White;
-            lblSalePrice.Location = new Point(61, 284);
-            lblSalePrice.Name = "lblSalePrice";
-            lblSalePrice.Size = new Size(114, 19);
-            lblSalePrice.TabIndex = 6;
-            lblSalePrice.Text = "Precio de venta";
-            lblSalePrice.Visible = false;
+            this.lblSalePrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSalePrice.AutoSize = true;
+            this.lblSalePrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblSalePrice.ForeColor = System.Drawing.Color.White;
+            this.lblSalePrice.Location = new System.Drawing.Point(61, 284);
+            this.lblSalePrice.Name = "lblSalePrice";
+            this.lblSalePrice.Size = new System.Drawing.Size(114, 19);
+            this.lblSalePrice.TabIndex = 6;
+            this.lblSalePrice.Text = "Precio de venta";
+            this.lblSalePrice.Visible = false;
             // 
             // txtSalePrice
             // 
-            txtSalePrice.AcceptsReturn = true;
-            txtSalePrice.AcceptsTab = true;
-            txtSalePrice.Anchor = AnchorStyles.None;
-            txtSalePrice.BackColor = Color.FromArgb(35, 35, 35);
-            txtSalePrice.BorderStyle = BorderStyle.FixedSingle;
-            txtSalePrice.CharacterCasing = CharacterCasing.Lower;
-            txtSalePrice.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSalePrice.ForeColor = Color.FromArgb(0, 125, 250);
-            txtSalePrice.Location = new Point(61, 306);
-            txtSalePrice.MaxLength = 30;
-            txtSalePrice.Name = "txtSalePrice";
-            txtSalePrice.PlaceholderText = "Obligatorio";
-            txtSalePrice.Size = new Size(280, 29);
-            txtSalePrice.TabIndex = 7;
-            txtSalePrice.TextAlign = HorizontalAlignment.Center;
-            txtSalePrice.Visible = false;
+            this.txtSalePrice.AcceptsReturn = true;
+            this.txtSalePrice.AcceptsTab = true;
+            this.txtSalePrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSalePrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtSalePrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSalePrice.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtSalePrice.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSalePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.txtSalePrice.Location = new System.Drawing.Point(61, 306);
+            this.txtSalePrice.MaxLength = 30;
+            this.txtSalePrice.Name = "txtSalePrice";
+            this.txtSalePrice.PlaceholderText = "Obligatorio";
+            this.txtSalePrice.Size = new System.Drawing.Size(280, 29);
+            this.txtSalePrice.TabIndex = 7;
+            this.txtSalePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSalePrice.Visible = false;
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(61, 132);
-            label1.Name = "label1";
-            label1.Size = new Size(75, 19);
-            label1.TabIndex = 3;
-            label1.Text = "Categoría";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(61, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 19);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Categoría";
             // 
             // txtBarCode
             // 
-            txtBarCode.AcceptsReturn = true;
-            txtBarCode.AcceptsTab = true;
-            txtBarCode.Anchor = AnchorStyles.None;
-            txtBarCode.BackColor = Color.FromArgb(35, 35, 35);
-            txtBarCode.BorderStyle = BorderStyle.FixedSingle;
-            txtBarCode.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBarCode.ForeColor = Color.FromArgb(0, 125, 250);
-            txtBarCode.Location = new Point(441, 155);
-            txtBarCode.MaxLength = 50;
-            txtBarCode.Name = "txtBarCode";
-            txtBarCode.PlaceholderText = "Opcional";
-            txtBarCode.Size = new Size(280, 29);
-            txtBarCode.TabIndex = 11;
-            txtBarCode.TextAlign = HorizontalAlignment.Center;
+            this.txtBarCode.AcceptsReturn = true;
+            this.txtBarCode.AcceptsTab = true;
+            this.txtBarCode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBarCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtBarCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBarCode.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBarCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.txtBarCode.Location = new System.Drawing.Point(441, 155);
+            this.txtBarCode.MaxLength = 50;
+            this.txtBarCode.Name = "txtBarCode";
+            this.txtBarCode.PlaceholderText = "Opcional";
+            this.txtBarCode.Size = new System.Drawing.Size(280, 29);
+            this.txtBarCode.TabIndex = 11;
+            this.txtBarCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblBarCode
             // 
-            lblBarCode.Anchor = AnchorStyles.None;
-            lblBarCode.AutoSize = true;
-            lblBarCode.BackColor = Color.Transparent;
-            lblBarCode.ForeColor = Color.White;
-            lblBarCode.Location = new Point(441, 133);
-            lblBarCode.Name = "lblBarCode";
-            lblBarCode.Size = new Size(126, 19);
-            lblBarCode.TabIndex = 10;
-            lblBarCode.Text = "Código de barras";
+            this.lblBarCode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBarCode.AutoSize = true;
+            this.lblBarCode.BackColor = System.Drawing.Color.Transparent;
+            this.lblBarCode.ForeColor = System.Drawing.Color.White;
+            this.lblBarCode.Location = new System.Drawing.Point(441, 133);
+            this.lblBarCode.Name = "lblBarCode";
+            this.lblBarCode.Size = new System.Drawing.Size(126, 19);
+            this.lblBarCode.TabIndex = 10;
+            this.lblBarCode.Text = "Código de barras";
             // 
             // cmbCategories
             // 
-            cmbCategories.Anchor = AnchorStyles.None;
-            cmbCategories.BackColor = Color.FromArgb(35, 35, 35);
-            cmbCategories.FlatStyle = FlatStyle.Flat;
-            cmbCategories.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbCategories.ForeColor = Color.FromArgb(0, 125, 250);
-            cmbCategories.FormattingEnabled = true;
-            cmbCategories.Location = new Point(63, 154);
-            cmbCategories.Name = "cmbCategories";
-            cmbCategories.Size = new Size(280, 29);
-            cmbCategories.TabIndex = 4;
+            this.cmbCategories.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbCategories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.cmbCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbCategories.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.cmbCategories.FormattingEnabled = true;
+            this.cmbCategories.Location = new System.Drawing.Point(63, 154);
+            this.cmbCategories.Name = "cmbCategories";
+            this.cmbCategories.Size = new System.Drawing.Size(280, 29);
+            this.cmbCategories.TabIndex = 4;
             // 
             // txtDescription
             // 
-            txtDescription.AcceptsReturn = true;
-            txtDescription.AcceptsTab = true;
-            txtDescription.Anchor = AnchorStyles.None;
-            txtDescription.BackColor = Color.FromArgb(35, 35, 35);
-            txtDescription.BorderStyle = BorderStyle.FixedSingle;
-            txtDescription.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDescription.ForeColor = Color.FromArgb(0, 125, 250);
-            txtDescription.Location = new Point(441, 249);
-            txtDescription.MaxLength = 200;
-            txtDescription.Multiline = true;
-            txtDescription.Name = "txtDescription";
-            txtDescription.PlaceholderText = "Describa el artículo";
-            txtDescription.Size = new Size(280, 96);
-            txtDescription.TabIndex = 13;
-            txtDescription.TextAlign = HorizontalAlignment.Center;
+            this.txtDescription.AcceptsReturn = true;
+            this.txtDescription.AcceptsTab = true;
+            this.txtDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescription.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.txtDescription.Location = new System.Drawing.Point(441, 249);
+            this.txtDescription.MaxLength = 200;
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.PlaceholderText = "Describa el artículo";
+            this.txtDescription.Size = new System.Drawing.Size(280, 96);
+            this.txtDescription.TabIndex = 13;
+            this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblDescription
             // 
-            lblDescription.Anchor = AnchorStyles.None;
-            lblDescription.AutoSize = true;
-            lblDescription.BackColor = Color.Transparent;
-            lblDescription.ForeColor = Color.White;
-            lblDescription.Location = new Point(441, 227);
-            lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(87, 19);
-            lblDescription.TabIndex = 12;
-            lblDescription.Text = "Descripción";
+            this.lblDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescription.ForeColor = System.Drawing.Color.White;
+            this.lblDescription.Location = new System.Drawing.Point(441, 227);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(87, 19);
+            this.lblDescription.TabIndex = 12;
+            this.lblDescription.Text = "Descripción";
             // 
             // btnSave
             // 
-            btnSave.Anchor = AnchorStyles.Bottom;
-            btnSave.BackColor = Color.FromArgb(25, 25, 25);
-            btnSave.FlatAppearance.BorderSize = 0;
-            btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Nirmala UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSave.ForeColor = Color.FromArgb(0, 125, 250);
-            btnSave.IconChar = FontAwesome.Sharp.IconChar.NetworkWired;
-            btnSave.IconColor = Color.FromArgb(0, 125, 250);
-            btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnSave.IconSize = 30;
-            btnSave.Location = new Point(312, 361);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(160, 46);
-            btnSave.TabIndex = 14;
-            btnSave.Text = "Guardar";
-            btnSave.TextAlign = ContentAlignment.MiddleRight;
-            btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += btnSave_Click;
-            // 
-            // checkBox1
-            // 
-            checkBox1.Anchor = AnchorStyles.None;
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.Transparent;
-            checkBox1.ForeColor = Color.White;
-            checkBox1.Location = new Point(61, 223);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(243, 23);
-            checkBox1.TabIndex = 15;
-            checkBox1.Text = "¿Artículo de producción propia?";
-            checkBox1.UseVisualStyleBackColor = false;
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.btnSave.IconChar = FontAwesome.Sharp.IconChar.NetworkWired;
+            this.btnSave.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(250)))));
+            this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSave.IconSize = 30;
+            this.btnSave.Location = new System.Drawing.Point(312, 361);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(160, 46);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "Guardar";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // AddItemScreen
             // 
-            AcceptButton = btnSave;
-            AutoScaleDimensions = new SizeF(96F, 96F);
-            AutoScaleMode = AutoScaleMode.Dpi;
-            BackColor = Color.FromArgb(28, 28, 28);
-            ClientSize = new Size(784, 470);
-            Controls.Add(checkBox1);
-            Controls.Add(btnSave);
-            Controls.Add(cmbCategories);
-            Controls.Add(lblBarCode);
-            Controls.Add(label1);
-            Controls.Add(txtBarCode);
-            Controls.Add(lblSalePrice);
-            Controls.Add(txtSalePrice);
-            Controls.Add(lblDescription);
-            Controls.Add(lblCodeName);
-            Controls.Add(txtDescription);
-            Controls.Add(txtCodeName);
-            Controls.Add(lblItemName);
-            Controls.Add(txtItemName);
-            Controls.Add(chkIsForSale);
-            ForeColor = SystemColors.ActiveCaption;
-            Name = "AddItemScreen";
-            Padding = new Padding(60);
-            Text = "Agregar nuevo item";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AcceptButton = this.btnSave;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.ClientSize = new System.Drawing.Size(784, 470);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.cmbCategories);
+            this.Controls.Add(this.lblBarCode);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtBarCode);
+            this.Controls.Add(this.lblSalePrice);
+            this.Controls.Add(this.txtSalePrice);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.lblCodeName);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.txtCodeName);
+            this.Controls.Add(this.lblItemName);
+            this.Controls.Add(this.txtItemName);
+            this.Controls.Add(this.chkIsForSale);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Name = "AddItemScreen";
+            this.Padding = new System.Windows.Forms.Padding(60);
+            this.Text = "Agregar nuevo item";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -314,6 +300,5 @@
         private CustomTextBox txtDescription;
         private Label lblDescription;
         private CustomButton btnSave;
-        private CheckBox checkBox1;
     }
 }

@@ -5,9 +5,6 @@ namespace View
 {
     public partial class AddProductionOrderScreen : BaseForm
     {
-        List<Item> SupplyList;
-        BindingSource BSRequiredSupplies;
-
         public AddProductionOrderScreen()
         {
             InitializeComponent();
@@ -16,48 +13,38 @@ namespace View
 
         private void Reload()
         {
-            //Loads items into cmb
-            foreach (Item item in Info.GetProducibleItems())
+            foreach (Item item in Info.GetItemsForSale())
             {
                 cmbItems.Items.Add(item);
+                //BUG doesn't load items
             }
-
-
-            BSRequiredSupplies = new BindingSource();
         }
 
         private void cmbItem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Reloads SupplyList with matching Item supplies
-            if (cmbItems.SelectedIndex != -1)
+            Item selectedItem = (Item)cmbItems.SelectedItem;
+            List<Item> supplyList = Info.GetSupplies(selectedItem);
+            int index;
+            foreach (Item supply in supplyList)
             {
-                nudQuantity.Enabled = true;
+                index = dgvRequiredSupplies.NewRowIndex;
 
-                Item selectedItem = (Item)cmbItems.SelectedItem;
-                SupplyList = Info.GetProductionSupplies(selectedItem);
-
-                //binds SupplyList to DGV through Binding Source
-                BSRequiredSupplies.DataSource = SupplyList;
-                dgvRequiredSupplies.DataSource = BSRequiredSupplies;
+                dgvRequiredSupplies.Rows.Add(supply);
+                dgvRequiredSupplies.Rows[index].Cells["Quantity"].Value = supply.SuppliedQuantity;
             }
-            else
-            {
-                nudQuantity.Enabled = false;
-            }
-            nudQuantity.Value = 1;
         }
 
         private void nudQuantity_ValueChanged(object sender, EventArgs e)
         {
             Item selectedItem = (Item)cmbItems.SelectedItem;
-            SupplyList = Info.GetProductionSupplies(selectedItem);
-
-            //binds SupplyList to DGV through Binding Source
-            BSRequiredSupplies.DataSource = SupplyList;
-            dgvRequiredSupplies.DataSource = BSRequiredSupplies;
-            foreach (Item supply in SupplyList)
+            List<Item> supplyList = Info.GetSupplies(selectedItem);
+            int index;
+            foreach (Item supply in supplyList)
             {
-                supply.SuppliedQuantity *= Convert.ToInt16(nudQuantity.Value);
+                index = dgvRequiredSupplies.NewRowIndex;
+
+                dgvRequiredSupplies.Rows.Add(supply);
+                dgvRequiredSupplies.Rows[index].Cells["Quantity"].Value = supply.SuppliedQuantity;
             }
         }
 

@@ -16,7 +16,6 @@ namespace View
             Username = txtUser.Text;
             Password = txtPassword.Text;
 
-
             if (Username == String.Empty
                 || Username == null)
             {
