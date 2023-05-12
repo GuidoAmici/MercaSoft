@@ -5,12 +5,12 @@ namespace Control
 {
     public static class Info
     {
-        public static List<Category> GetCategories(bool isActive)
+        public static List<ItemCategory> GetCategories(bool isActive)
         {
-            List<Category> list = CategoryDao.GetCategories();
+            List<ItemCategory> list = ItemCategoryDao.Get();
             if (isActive)
             {
-                foreach (Category obj in list)
+                foreach (ItemCategory obj in list)
                 {
                     if (!obj.IsActive)
                     {
@@ -34,15 +34,15 @@ namespace Control
 
         public static List<Item> GetItemsForSale()
         {
-            return ItemDao.GetItems(true);
+            return ItemDao.GetItemsForSale(true);
         }
 
-        public static List<Item> GetSupplies()
+        public static List<Item> GetProducibleItems()
         {
-            return ItemDao.GetItems(false);
+            return ItemDao.GetProducibleItems(true);
         }
 
-        public static List<Item> GetSupplies(Item itemProduced)
+        public static List<Item> GetProductionSupplies(Item itemProduced)
         {
             return ItemDao.GetSupplies(itemProduced);
         }
