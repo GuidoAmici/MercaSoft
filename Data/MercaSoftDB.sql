@@ -50,7 +50,7 @@ Create table Invoices(
 )
 GO
 
-Create table Categories(
+Create table ItemCategories(
 	ID int not null identity,
 	Name varchar(30) not null,
 	IsActive bit not null
@@ -58,7 +58,7 @@ Create table Categories(
 )
 GO
 
-insert into Categories (Name, IsActive) values 
+insert into ItemCategories (Name, IsActive) values 
 	('Medición', 1),
 	('Accesorios', 1),
 	('Merchandising', 1),
@@ -68,44 +68,45 @@ GO
 Create table Items(
 	ID int not null identity,
 	Name varchar(50) not null,
-	SalePrice float,
-	CategoryID int,
+	Price float,
+	ItemCategoryID int,
+	Producible bit not null,
 	IsForSale bit not null,
 	Stock int not null,
 	Description varchar(100),
 	CodeName varchar(30),
 	BarCode int,
 	PRIMARY KEY (ID),
-	FOREIGN KEY (CategoryID) references Categories(ID)
+	FOREIGN KEY (ItemCategoryID) references ItemCategories(ID)
 )
 GO
 
-Insert into Items (ID,Name,CategoryID,IsForSale,Stock) values
-(1,'Buffer pH 4.01 (50 ml)',1,1,0),
-(2,'Buffer pH 6.86 (50 ml)',1,1,0),
-(3,'Buffer pH 9.18 (50 ml)',1,1,0),
-(4,'Buffer pH 4.01 (100 ml)',1,1,0),
-(5,'Buffer pH 6.86 (100 ml)',1,1,0),
-(6,'Buffer pH 9.18 (100 ml)',1,1,0),
-(7,'Frasco etiquetado - Buffer pH 4.01 (50 ml)',4,0,0),
-(8,'Frasco etiquetado - Buffer pH 6.86 (50 ml)',4,0,0),
-(9,'Frasco etiquetado - Buffer pH 9.18 (50 ml)',4,0,0),
-(10,'Frasco etiquetado - Buffer pH 4.01 (100 ml)',4,0,0),
-(11,'Frasco etiquetado - Buffer pH 6.86 (100 ml)',4,0,0),
-(12,'Frasco etiquetado - Buffer pH 9.18 (100 ml)',4,0,0),
-(13,'Etiqueta - Buffer pH 4.01 (50 ml)',4,0,0),
-(14,'Etiqueta - Buffer pH 6.86 (50 ml)',4,0,0),
-(15,'Etiqueta - Buffer pH 9.18 (50 ml)',4,0,0),
-(16,'Etiqueta - Buffer pH 4.01 (100 ml)',4,0,0),
-(17,'Etiqueta - Buffer pH 6.86 (100 ml)',4,0,0),
-(18,'Etiqueta - Buffer pH 9.18 (100 ml)',4,0,0),
-(19,'Envase LevePET (50 ml - ambar)',4,0,0),
-(20,'Envase LevePET (100 ml - ambar)',4,0,0),
-(21,'Tapa RP28 (blanca)',4,0,0),
-(22,'Vaso medidor',4,0,0),
-(23,'Solución (ml) - Buffer pH 4.01',4,0,0),
-(24,'Solución (ml) - Buffer pH 6.86',4,0,0),
-(25,'Solución (ml) - Buffer pH 9.18',4,0,0)
+Insert into Items (Name,ItemCategoryID,Producible,IsForSale,Stock) values
+	('Buffer pH 4.01 (50 ml)',1,1,1,12),
+	('Buffer pH 6.86 (50 ml)',1,1,1,24),
+	('Buffer pH 9.18 (50 ml)',1,1,1,36),
+	('Buffer pH 4.01 (100 ml)',1,1,1,6),
+	('Buffer pH 6.86 (100 ml)',1,1,1,12),
+	('Buffer pH 9.18 (100 ml)',1,1,1,18),
+	('Frasco etiquetado - Buffer pH 4.01 (50 ml)',4,1,0,120),
+	('Frasco etiquetado - Buffer pH 6.86 (50 ml)',4,1,0,240),
+	('Frasco etiquetado - Buffer pH 9.18 (50 ml)',4,1,0,3600),
+	('Frasco etiquetado - Buffer pH 4.01 (100 ml)',4,1,0,60),
+	('Frasco etiquetado - Buffer pH 6.86 (100 ml)',4,1,0,120),
+	('Frasco etiquetado - Buffer pH 9.18 (100 ml)',4,1,0,180),
+	('Etiqueta - Buffer pH 4.01 (50 ml)',4,0,0,5000),
+	('Etiqueta - Buffer pH 6.86 (50 ml)',4,0,0,6000),
+	('Etiqueta - Buffer pH 9.18 (50 ml)',4,0,0,7000),
+	('Etiqueta - Buffer pH 4.01 (100 ml)',4,0,0,500),
+	('Etiqueta - Buffer pH 6.86 (100 ml)',4,0,0,600),
+	('Etiqueta - Buffer pH 9.18 (100 ml)',4,0,0,700),
+	('Envase LevePET (50 ml - ambar)',4,0,0,480),
+	('Envase LevePET (100 ml - ambar)',4,0,0,4800),
+	('Tapa RP28 (blanca)',4,0,0,2800),
+	('Vaso medidor',4,0,0,1800),
+	('Solución (ml) - Buffer pH 4.01',4,0,0,100),
+	('Solución (ml) - Buffer pH 6.86',4,0,0,200),
+	('Solución (ml) - Buffer pH 9.18',4,0,0,300)
 GO
 
 Create table SupplyItems(
@@ -182,4 +183,28 @@ Create table LogHistory(
 )
 GO
 
+Create table ProductionOrders(
+	ID int not null identity,
+	UserID int not null,
+	ProducedItemID int not null,
+	Quantity int not null,
+	PRIMARY KEY (ID),
+	FOREIGN KEY (UserID) references Users(ID),
+	FOREIGN KEY (ProducedItemID) references Items(ID)
+)
+
+Create table ProductionRows(
+	ID int not null identity,
+	UserID int not null,
+	ProductionOrderID int not null,
+	ProducedItemID int not null,
+	Quantity int not null,
+	PRIMARY KEY (ID),
+	FOREIGN KEY (UserID) references Users(ID),
+	FOREIGN KEY (ProductionOrderID) references ProductionOrders(ID),
+	FOREIGN KEY (ProducedItemID) references Items(ID)
+)
+
 select * from LogHistory
+
+select * from items where IsForSale = 1
