@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entities
+﻿namespace Entities
 {
     public class Tax
     {
-        public string? Name { get; internal set; } = "No tax name";
-        public string? Description { get; internal set; } = "No description";
-        public float Percentage { get; internal set; }
+        public string? Name { get; set; } = "No tax name";
+        public string? Description { get; set; } = "No description";
+        public float Percentage { get; set; }
 
         public override string ToString()
         {
-            return Name + " (" + Percentage.ToString() + ")";
+            return $"{Name} ({Percentage})";
         }
     }
 }

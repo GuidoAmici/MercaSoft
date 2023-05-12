@@ -1,6 +1,4 @@
-﻿using System.Data;
-using System.Data.SqlClient;
-using System.Runtime.InteropServices;
+﻿using System.Data.SqlClient;
 
 namespace Control
 {
@@ -19,7 +17,7 @@ namespace Control
 
         public DAO()
         {
-            Connection = new SqlConnection("Data Source = " + ServerName + "; Initial Catalog = " + DBName + "; Integrated Security = SSPI");
+            Connection = new SqlConnection($"Data Source = {ServerName}; Initial Catalog = {DBName}; Integrated Security = SSPI");
             Command = new SqlCommand();
         }
 

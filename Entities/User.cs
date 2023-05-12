@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entities
+﻿namespace Entities
 {
     public class User
     {
-        public int ID { get; internal set; }
-        public string Username { get; internal set; }
+        public int ID { get; set; }
+        public string Username { get; set; }
         internal string Password { get; set; }
-        public string Email { get; internal set; }
+        public string Email { get; set; }
 
         public User()
         {

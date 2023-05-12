@@ -2,14 +2,14 @@
 {
     public class Invoice
     {
-        public int ID { get; internal set; }
-        public DateTime Date { get; internal set; }
-        public string? InvoiceNumber { get; internal set; }
+        public int ID { get; set; }
+        public DateTime Date { get; set; }
+        public string? InvoiceNumber { get; set; }
         public Company Company { get; set; }
-        public List<InvoiceItem> Items { get; internal set; }
-        public float SubtotalWithoutTaxes { get; internal set; }
-        public float Taxes { get; internal set; }
-        public float Total { get; internal set; }
+        public List<InvoiceItem> Items { get; set; }
+        public float SubtotalWithoutTaxes { get; set; }
+        public float Taxes { get; set; }
+        public float Total { get; set; }
 
         public Invoice()
         {
@@ -38,7 +38,7 @@
 
         public override string ToString()
         {
-            return "Factura Nº" + ID + " - " + Company.ToString();
+            return $"Factura Nº {ID} - {Company.ToString()}";
         }
     }
 }

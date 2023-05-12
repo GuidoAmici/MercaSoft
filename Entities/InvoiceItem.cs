@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entities
+﻿namespace Entities
 {
     public class InvoiceItem
     {
-        public int ID { get; internal set; }
-        public Item Item { get; internal set; }
-        public int Quantity { get; internal set; }
-        public float SubtotalWithoutTaxes { get; internal set; }
-        public List<Tax> TaxesList { get; internal set; }
-        public float Taxes { get; internal set; }
-        public float SubtotalWithTaxes { get; internal set; }
+        public int ID { get; set; }
+        public Item Item { get; set; }
+        public int Quantity { get; set; }
+        public float SubtotalWithoutTaxes { get; set; }
+        public List<Tax> TaxesList { get; set; }
+        public float Taxes { get; set; }
+        public float SubtotalWithTaxes { get; set; }
 
         public InvoiceItem(int id, Item item, int quantity, List<Tax> taxesList)
         {
@@ -36,7 +30,7 @@ namespace Entities
                 Taxes += SubtotalWithoutTaxes * tax.Percentage;
             }
 
-            SubtotalWithTaxes = SubtotalWithoutTaxes+Taxes;
+            SubtotalWithTaxes = SubtotalWithoutTaxes + Taxes;
         }
     }
 }
