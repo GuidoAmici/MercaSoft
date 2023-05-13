@@ -72,7 +72,10 @@ Create table Items(
 	ItemCategoryID int,
 	Producible bit not null,
 	IsForSale bit not null,
-	Stock int not null,
+	StockAvailable int not null default 0,
+	StockInProductionQueue int not null default 0,
+	StockReservedAsSupply int not null default 0,
+	StockMissing int not null default 0, /*Missing supply or oversold*/
 	Description varchar(100),
 	CodeName varchar(30),
 	BarCode int,
@@ -81,7 +84,7 @@ Create table Items(
 )
 GO
 
-Insert into Items (Name,ItemCategoryID,Producible,IsForSale,Stock) values
+Insert into Items (Name,ItemCategoryID,Producible,IsForSale,StockAvailable) values
 	('Buffer pH 4.01 (50 ml)',1,1,1,12),
 	('Buffer pH 6.86 (50 ml)',1,1,1,24),
 	('Buffer pH 9.18 (50 ml)',1,1,1,36),
@@ -173,10 +176,10 @@ Create table InvoiceItems(
 )
 GO
 
-Create table LogHistory(
+Create table Records(
 	ID int not null identity,
 	UserID int not null,
-	LogType varchar(7) not null,
+	RecordDetail varchar(20) not null,
 	Date DateTime not null default getdate(),
 	PRIMARY KEY (ID),
 	FOREIGN KEY (UserID) references Users(ID),
@@ -186,12 +189,14 @@ GO
 Create table ProductionOrders(
 	ID int not null identity,
 	UserID int not null,
+	DateTime DateTime not null default getdate(),
 	ProducedItemID int not null,
 	Quantity int not null,
 	PRIMARY KEY (ID),
 	FOREIGN KEY (UserID) references Users(ID),
 	FOREIGN KEY (ProducedItemID) references Items(ID)
 )
+GO
 
 Create table ProductionRows(
 	ID int not null identity,
@@ -204,7 +209,6 @@ Create table ProductionRows(
 	FOREIGN KEY (ProductionOrderID) references ProductionOrders(ID),
 	FOREIGN KEY (ProducedItemID) references Items(ID)
 )
+GO
 
-select * from LogHistory
-
-select * from items where IsForSale = 1
+select * from Records
