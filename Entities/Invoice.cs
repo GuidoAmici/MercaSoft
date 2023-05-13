@@ -38,7 +38,7 @@
 
         public override string ToString()
         {
-            return $"Factura Nº {ID} - {Company.ToString()}";
+            return $"Factura Nº {ID} - {Company}";
         }
     }
 }

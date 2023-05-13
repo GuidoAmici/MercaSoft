@@ -141,7 +141,7 @@
             this.cmbClients.Name = "cmbClients";
             this.cmbClients.Size = new System.Drawing.Size(279, 29);
             this.cmbClients.TabIndex = 2;
-            this.cmbClients.SelectedIndexChanged += new System.EventHandler(this.cmbClients_SelectedIndexChanged);
+            this.cmbClients.SelectedIndexChanged += new System.EventHandler(this.CmbClients_SelectedIndexChanged);
             // 
             // btnSave
             // 
@@ -164,7 +164,7 @@
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // lblTotal
             // 
@@ -291,7 +291,7 @@
             this.cmbItems.Name = "cmbItems";
             this.cmbItems.Size = new System.Drawing.Size(409, 29);
             this.cmbItems.TabIndex = 6;
-            this.cmbItems.SelectedIndexChanged += new System.EventHandler(this.cmbItems_SelectedIndexChanged);
+            this.cmbItems.SelectedIndexChanged += new System.EventHandler(this.CmbItems_SelectedIndexChanged);
             // 
             // nudQuantity
             // 
@@ -337,7 +337,7 @@
             this.btnAddItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddItem.UseVisualStyleBackColor = true;
-            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            this.btnAddItem.Click += new System.EventHandler(this.BtnAddItem_Click);
             // 
             // panel1
             // 

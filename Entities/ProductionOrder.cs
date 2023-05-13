@@ -3,10 +3,21 @@
     public class ProductionOrder
     {
         public int ID { get; set; }
-        public DateTime Date { get; set; }
+        public User User { get; set; }
+        public DateTime DateTime { get; set; }
         public Item Item { get; set; }
+        public int Quantity { get; set; }
 
         public ProductionOrder() { }
+
+        public ProductionOrder(int id, User user, DateTime dateTime, Item item, int quantity)
+        {
+            ID = id;
+            DateTime = dateTime;
+            User = user;
+            Item = item;
+            Quantity = quantity;
+        }
 
         public override string ToString()
         {

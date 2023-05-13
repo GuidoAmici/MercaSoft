@@ -30,7 +30,7 @@ namespace View
             dgvInvoiceItems.Refresh();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             if (dgvInvoiceItems.Rows.Count < 0 && cmbClients.SelectedIndex != -1)
             {
@@ -38,12 +38,12 @@ namespace View
             }
         }
 
-        private void cmbItems_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbItems_SelectedIndexChanged(object sender, EventArgs e)
         {
             nudQuantity.Value = 0;
         }
 
-        private void btnAddItem_Click(object sender, EventArgs e)
+        private void BtnAddItem_Click(object sender, EventArgs e)
         {
             if (cmbItems.SelectedIndex > -1)
                 SelectedItem = (Item)cmbItems.SelectedItem;
@@ -52,7 +52,7 @@ namespace View
             ReloadDGV();
         }
 
-        private void cmbClients_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbClients_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbClients.SelectedIndex > -1)
                 Invoice.Company = (Company)cmbClients.SelectedItem;

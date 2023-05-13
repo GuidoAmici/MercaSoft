@@ -103,7 +103,7 @@
             this.menuDashboard.Size = new System.Drawing.Size(94, 80);
             this.menuDashboard.Text = "Dashboard";
             this.menuDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.menuDashboard.Click += new System.EventHandler(this.menuDashboard_Click);
+            this.menuDashboard.Click += new System.EventHandler(this.MenuDashboard_Click);
             // 
             // menuSales
             // 
@@ -148,7 +148,7 @@
             this.submenuAddProductionRow.Name = "submenu";
             this.submenuAddProductionRow.Size = new System.Drawing.Size(286, 26);
             this.submenuAddProductionRow.Text = "Registrar tanda de producción";
-            this.submenuAddProductionRow.Click += new System.EventHandler(this.submenuAddProductionRow_Click);
+            this.submenuAddProductionRow.Click += new System.EventHandler(this.SubmenuAddProductionRow_Click);
             // 
             // submenuProductionOrders
             // 
@@ -176,7 +176,7 @@
             this.submenuAddProductionOrder.Name = "submenu";
             this.submenuAddProductionOrder.Size = new System.Drawing.Size(209, 26);
             this.submenuAddProductionOrder.Text = "Emitir nueva orden";
-            this.submenuAddProductionOrder.Click += new System.EventHandler(this.submenuAddProductionOrder_Click);
+            this.submenuAddProductionOrder.Click += new System.EventHandler(this.SubmenuAddProductionOrder_Click);
             // 
             // submenuProductionOrderHistory
             // 
@@ -189,7 +189,7 @@
             this.submenuProductionOrderHistory.Name = "submenu";
             this.submenuProductionOrderHistory.Size = new System.Drawing.Size(209, 26);
             this.submenuProductionOrderHistory.Text = "Ver historial";
-            this.submenuProductionOrderHistory.Click += new System.EventHandler(this.submenuProductionOrderHistory_Click);
+            this.submenuProductionOrderHistory.Click += new System.EventHandler(this.SubmenuProductionOrderHistory_Click);
             // 
             // menuInventory
             // 
@@ -220,7 +220,7 @@
             this.btnAddNewItem.Name = "submenu";
             this.btnAddNewItem.Size = new System.Drawing.Size(251, 26);
             this.btnAddNewItem.Text = "Agregar nuevo artículo";
-            this.btnAddNewItem.Click += new System.EventHandler(this.btnAddNewItem_Click);
+            this.btnAddNewItem.Click += new System.EventHandler(this.BtnAddNewItem_Click);
             // 
             // submenuCheckInventory
             // 
@@ -233,7 +233,7 @@
             this.submenuCheckInventory.Name = "submenu";
             this.submenuCheckInventory.Size = new System.Drawing.Size(251, 26);
             this.submenuCheckInventory.Text = "Ver inventario";
-            this.submenuCheckInventory.Click += new System.EventHandler(this.submenuCheckInventory_Click);
+            this.submenuCheckInventory.Click += new System.EventHandler(this.SubmenuCheckInventory_Click);
             // 
             // submenuMoveHistory
             // 
@@ -352,7 +352,7 @@
             this.btnLogOut.Name = "submenu";
             this.btnLogOut.Size = new System.Drawing.Size(184, 26);
             this.btnLogOut.Text = "Cerrar sesión";
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.btnLogOut.Click += new System.EventHandler(this.BtnLogOut_Click);
             // 
             // iconMenuItem1
             // 

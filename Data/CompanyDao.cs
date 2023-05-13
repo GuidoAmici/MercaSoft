@@ -8,14 +8,14 @@ namespace Data
         public static List<Company> GetCompanies()
         {
             DAO dao = new();
-            string getCompanies = "select * from Companies";
+            string query = "select * from Companies";
             List<Company> list = new();
             Company obj;
 
             try
             {
                 dao.OpenConnection();
-                dao.SetConsult(getCompanies);
+                dao.SetConsult(query);
                 dao.ExecuteConsult();
 
                 while (dao.Reader.Read())
@@ -25,7 +25,7 @@ namespace Data
                         (string)dao.Reader["Name"],
                         (bool)dao.Reader["IsClient"],
                         (bool)dao.Reader["IsSupplier"]
-                        );
+                    );
 
                     list.Add(obj);
                 }

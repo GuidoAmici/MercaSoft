@@ -11,7 +11,7 @@ namespace View
             InitializeComponent();
         }
 
-        private void btnLogIn_Click(object sender, EventArgs e)
+        private void BtnLogIn_Click(object sender, EventArgs e)
         {
             Username = txtUser.Text;
             Password = txtPassword.Text;
@@ -49,7 +49,7 @@ namespace View
             }
         }
 
-        private void lblForgottenPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LblForgottenPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //TODOWHY Que pasa al hacer click en "Forgotten password?"
         }

@@ -1,9 +1,4 @@
 ﻿using Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Control
 {
@@ -12,25 +7,25 @@ namespace Control
         public static User GetUser(string username, string password)
         {
             DAO dao = new();
-            string CheckLogInData = "select * from Users where Username = @username and Password = @password";
+            string query = "select * from Users where Username = @username and Password = @password";
             User user = null;
 
             try
             {
                 dao.OpenConnection();
-                dao.SetConsult(CheckLogInData);
+                dao.SetConsult(query);
                 dao.SetParameter("@username", username);
                 dao.SetParameter("@password", password);
                 dao.ExecuteConsult();
 
                 while (dao.Reader.Read())
                 {
-                    user = new (
+                    user = new(
                         (int)dao.Reader["ID"],
                         (string)dao.Reader["Username"],
                         (string)dao.Reader["Password"],
                         (string)dao.Reader["Email"]
-                        );
+                    );
                 }
 
                 return user;
@@ -42,13 +37,16 @@ namespace Control
         public static void RegisterLogIn(User user)
         {
             DAO dao = new();
-            string RegisterSesion = "insert into LogHistory (UserID,LogType) values (@userID,'Log In')";
+
+            string recordDetail = "Log In";
+            string query = "insert into Records (UserID,RecordDetail) values (@userID,@recordDetail)";
 
             try
             {
                 dao.OpenConnection();
-                dao.SetConsult(RegisterSesion);
+                dao.SetConsult(query);
                 dao.SetParameter("@userID", user.ID);
+                dao.SetParameter("@recordDetail", recordDetail);
                 dao.ExecuteConsult();
             }
             catch (Exception) { throw; }
@@ -58,13 +56,16 @@ namespace Control
         public static void RegisterLogOut(User user)
         {
             DAO dao = new();
-            string RegisterSesion = "insert into LogHistory (UserID,LogType) values (@userID,'Log Out')";
+
+            string recordDetail = "Log Out";
+            string query = "insert into Records (UserID,RecordDetail) values (@userID,@recordDetail)";
 
             try
             {
                 dao.OpenConnection();
-                dao.SetConsult(RegisterSesion);
+                dao.SetConsult(query);
                 dao.SetParameter("@userID", user.ID);
+                dao.SetParameter("@recordDetail", recordDetail);
                 dao.ExecuteConsult();
             }
             catch (Exception) { throw; }
@@ -74,16 +75,45 @@ namespace Control
         public static bool UserExists(string username)
         {
             DAO dao = new();
-            string CheckUserExistance = "select * from users where Username = @username";
+            string query = $"select * from users where Username = @username";
 
             try
             {
                 dao.OpenConnection();
-                dao.SetConsult(CheckUserExistance);
+                dao.SetConsult(query);
                 dao.SetParameter("@username", username);
                 dao.ExecuteConsult();
-                if (dao.Reader.Read() != null) return true;
-                else return false;
+
+                return dao.Reader.Read();
+            }
+            catch (Exception) { throw; }
+            finally { dao.CloseConnection(); }
+        }
+
+        internal static User GetUserByID(int userID)
+        {
+            DAO dao = new();
+            string query = $"select * from Users where ID = @userID";
+
+            User user;
+
+            try
+            {
+                dao.OpenConnection();
+                dao.SetConsult(query);
+                dao.SetParameter("@userID", userID);
+                dao.ExecuteConsult();
+
+                dao.Reader.Read();
+
+                user = new(
+                    (int)dao.Reader["ID"],
+                    (string)dao.Reader["Userame"],
+                    (string)dao.Reader["Password"],
+                    (string)dao.Reader["Email"]
+                );
+
+                return user;
             }
             catch (Exception) { throw; }
             finally { dao.CloseConnection(); }

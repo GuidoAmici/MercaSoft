@@ -8,6 +8,9 @@ namespace View
         List<Item> SupplyList;
         BindingSource BSRequiredSupplies;
 
+        ProductionOrder ProductionOrder;
+
+
         public AddProductionOrderScreen()
         {
             InitializeComponent();
@@ -26,7 +29,7 @@ namespace View
             BSRequiredSupplies = new BindingSource();
         }
 
-        private void cmbItem_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbItem_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Reloads SupplyList with matching Item supplies
             if (cmbItems.SelectedIndex != -1)
@@ -47,7 +50,7 @@ namespace View
             nudQuantity.Value = 1;
         }
 
-        private void nudQuantity_ValueChanged(object sender, EventArgs e)
+        private void NudQuantity_ValueChanged(object sender, EventArgs e)
         {
             Item selectedItem = (Item)cmbItems.SelectedItem;
             SupplyList = Info.GetProductionSupplies(selectedItem);
@@ -61,9 +64,12 @@ namespace View
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
-
+            foreach (Item supply in SupplyList)
+            {
+                Info.SubmitProductionOrder(ProductionOrder, SupplyList);
+            }
         }
     }
 }

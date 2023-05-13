@@ -19,7 +19,7 @@ namespace View
             }
         }
 
-        private void chkIsForSale_CheckedChanged(object sender, EventArgs e)
+        private void ChkIsForSale_CheckedChanged(object sender, EventArgs e)
         {
             if (chkIsForSale.Checked)
             {
@@ -33,7 +33,7 @@ namespace View
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             //TODO Add dgv for related supplies to the item
             if (txtItemName.Text == string.Empty)

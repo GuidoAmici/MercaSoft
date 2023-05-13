@@ -57,7 +57,7 @@
             chkIsForSale.TabIndex = 5;
             chkIsForSale.Text = "¿Artículo para la venta?";
             chkIsForSale.UseVisualStyleBackColor = false;
-            chkIsForSale.CheckedChanged += chkIsForSale_CheckedChanged;
+            chkIsForSale.CheckedChanged += ChkIsForSale_CheckedChanged;
             // 
             // txtItemName
             // 
@@ -253,7 +253,7 @@
             btnSave.TextAlign = ContentAlignment.MiddleRight;
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += btnSave_Click;
+            btnSave.Click += BtnSave_Click;
             // 
             // checkBox1
             // 

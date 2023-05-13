@@ -36,13 +36,13 @@
             nudQuantity = new NumericUpDown();
             lblRequiredSupplies = new Label();
             dgvRequiredSupplies = new CustomDataGridView();
+            itemBindingSource = new BindingSource(components);
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             codeNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             stockDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             barCodeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
-            itemBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)nudQuantity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvRequiredSupplies).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itemBindingSource).BeginInit();
@@ -67,7 +67,7 @@
             cmbItems.Name = "cmbItems";
             cmbItems.Size = new Size(492, 29);
             cmbItems.TabIndex = 1;
-            cmbItems.SelectedIndexChanged += cmbItem_SelectedIndexChanged;
+            cmbItems.SelectedIndexChanged += CmbItem_SelectedIndexChanged;
             // 
             // btnSave
             // 
@@ -90,7 +90,7 @@
             btnSave.TextAlign = ContentAlignment.MiddleRight;
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += btnSave_Click;
+            btnSave.Click += BtnSave_Click;
             // 
             // lblQuantity
             // 
@@ -115,7 +115,7 @@
             nudQuantity.TabIndex = 4;
             nudQuantity.ThousandsSeparator = true;
             nudQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            nudQuantity.ValueChanged += nudQuantity_ValueChanged;
+            nudQuantity.ValueChanged += NudQuantity_ValueChanged;
             // 
             // lblRequiredSupplies
             // 
@@ -149,6 +149,10 @@
             dgvRequiredSupplies.Size = new Size(674, 230);
             dgvRequiredSupplies.TabIndex = 6;
             // 
+            // itemBindingSource
+            // 
+            itemBindingSource.DataSource = typeof(Entities.Item);
+            // 
             // iDDataGridViewTextBoxColumn
             // 
             iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -160,18 +164,18 @@
             // codeNameDataGridViewTextBoxColumn
             // 
             codeNameDataGridViewTextBoxColumn.DataPropertyName = "CodeName";
-            codeNameDataGridViewTextBoxColumn.HeaderText = "CodeName";
+            codeNameDataGridViewTextBoxColumn.HeaderText = "Código";
             codeNameDataGridViewTextBoxColumn.Name = "codeNameDataGridViewTextBoxColumn";
             codeNameDataGridViewTextBoxColumn.ReadOnly = true;
-            codeNameDataGridViewTextBoxColumn.Width = 109;
+            codeNameDataGridViewTextBoxColumn.Width = 83;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Nombre";
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             nameDataGridViewTextBoxColumn.ReadOnly = true;
-            nameDataGridViewTextBoxColumn.Width = 74;
+            nameDataGridViewTextBoxColumn.Width = 90;
             // 
             // stockDataGridViewTextBoxColumn
             // 
@@ -184,23 +188,19 @@
             // barCodeDataGridViewTextBoxColumn
             // 
             barCodeDataGridViewTextBoxColumn.DataPropertyName = "BarCode";
-            barCodeDataGridViewTextBoxColumn.HeaderText = "BarCode";
+            barCodeDataGridViewTextBoxColumn.HeaderText = "Código de barras";
             barCodeDataGridViewTextBoxColumn.Name = "barCodeDataGridViewTextBoxColumn";
             barCodeDataGridViewTextBoxColumn.ReadOnly = true;
             barCodeDataGridViewTextBoxColumn.Visible = false;
-            barCodeDataGridViewTextBoxColumn.Width = 92;
+            barCodeDataGridViewTextBoxColumn.Width = 151;
             // 
             // Quantity
             // 
             Quantity.DataPropertyName = "SuppliedQuantity";
-            Quantity.HeaderText = "Quantity";
+            Quantity.HeaderText = "Cant. insumos";
             Quantity.Name = "Quantity";
             Quantity.ReadOnly = true;
-            Quantity.Width = 91;
-            // 
-            // itemBindingSource
-            // 
-            itemBindingSource.DataSource = typeof(Entities.Item);
+            Quantity.Width = 126;
             // 
             // AddProductionOrderScreen
             // 
@@ -232,12 +232,12 @@
         private NumericUpDown nudQuantity;
         private Label lblRequiredSupplies;
         private BindingSource itemBindingSource;
+        private CustomDataGridView dgvRequiredSupplies;
         private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn codeNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn barCodeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn Quantity;
-        private CustomDataGridView dgvRequiredSupplies;
     }
 }

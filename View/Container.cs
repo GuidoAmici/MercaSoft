@@ -43,10 +43,12 @@ namespace View
             }
             else
             {
-                formInPanel = new InsertedForm();
-                formInPanel.TopLevel = false;
-                formInPanel.FormBorderStyle = FormBorderStyle.None;
-                formInPanel.Dock = DockStyle.Fill;
+                formInPanel = new InsertedForm
+                {
+                    TopLevel = false,
+                    FormBorderStyle = FormBorderStyle.None,
+                    Dock = DockStyle.Fill
+                };
                 mainPanel.Controls.Add(formInPanel);
                 mainPanel.Tag = formInPanel;
                 formInPanel.Show();
@@ -66,7 +68,7 @@ namespace View
 
         private void CloseOpenForms()
         {
-            List<Form> forms = new List<Form>();
+            List<Form> forms = new();
 
             foreach (Form form in Application.OpenForms)
             {
@@ -82,7 +84,7 @@ namespace View
             }
         }
 
-        private void btnLogOut_Click(object sender, EventArgs e)
+        private void BtnLogOut_Click(object sender, EventArgs e)
         {
             Sesion.LogOut();
             CloseOpenForms();
@@ -94,42 +96,42 @@ namespace View
             Sesion.LogOut();
         }
 
-        private void btnAddNewItem_Click(object sender, EventArgs e)
+        private void BtnAddNewItem_Click(object sender, EventArgs e)
         {
             InsertIntoPanel<AddItemScreen>();
         }
 
-        private void menuDashboard_Click(object sender, EventArgs e)
+        private void MenuDashboard_Click(object sender, EventArgs e)
         {
             InsertIntoPanel<DashboardScreen>();
         }
 
-        private void submenuCheckInventory_Click(object sender, EventArgs e)
+        private void SubmenuCheckInventory_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void submenuAddSale_Click(object sender, EventArgs e)
+        private void SubmenuAddSale_Click(object sender, EventArgs e)
         {
             InsertIntoPanel<AddInvoiceScreen>();
         }
 
-        private void submenuSalesHistory_Click(object sender, EventArgs e)
+        private void SubmenuSalesHistory_Click(object sender, EventArgs e)
         {
             InsertIntoPanel<InvoiceHistoryScreen>();
         }
 
-        private void submenuAddProductionOrder_Click(object sender, EventArgs e)
+        private void SubmenuAddProductionOrder_Click(object sender, EventArgs e)
         {
             InsertIntoPanel<AddProductionOrderScreen>();
         }
 
-        private void submenuProductionOrderHistory_Click(object sender, EventArgs e)
+        private void SubmenuProductionOrderHistory_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void submenuAddProductionRow_Click(object sender, EventArgs e)
+        private void SubmenuAddProductionRow_Click(object sender, EventArgs e)
         {
             InsertIntoPanel<AddProductionRowScreen>();
         }

@@ -54,7 +54,7 @@
             this.btnLogIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogIn.UseVisualStyleBackColor = true;
-            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
+            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
             // 
             // txtUser
             // 
@@ -107,7 +107,7 @@
             this.lblForgottenPassword.Text = "Forgotten password";
             this.lblForgottenPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblForgottenPassword.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(96)))), ((int)(((byte)(232)))));
-            this.lblForgottenPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblForgottenPassword_LinkClicked);
+            this.lblForgottenPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LblForgottenPassword_LinkClicked);
             // 
             // LogInScreen
             // 

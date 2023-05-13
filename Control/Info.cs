@@ -46,5 +46,18 @@ namespace Control
         {
             return ItemDao.GetSupplies(itemProduced);
         }
+
+        public static void SubmitProductionOrder(ProductionOrder productionOrder, List<Item> supplyList)
+        {
+            ProductionOrderDAO.Add(productionOrder, Sesion.User);
+
+            foreach (Item item in supplyList)
+            {
+
+            }
+
+            //TODO Pasar stock de insumos de estado disponible a reservado
+            // si la diferencia entre Item.Stock.Available y cantidad requerida es menor a 0, subir stock como faltante
+        }
     }
 }

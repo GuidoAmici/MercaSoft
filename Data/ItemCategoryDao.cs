@@ -24,7 +24,7 @@ namespace Data
                         (int)dao.Reader["ID"],
                         (string)dao.Reader["Name"],
                         (bool)dao.Reader["IsActive"]
-                        );
+                    );
 
                     list.Add(obj);
                 }
@@ -38,14 +38,14 @@ namespace Data
         public static ItemCategory Get(int itemCategoryID)
         {
             DAO dao = new();
-            string query = $"select * from ItemCategories where ID = {itemCategoryID}";
-            List<ItemCategory> list = new();
+            string query = "select * from ItemCategories where ID = @itemCategoryID";
             ItemCategory obj;
 
             try
             {
                 dao.OpenConnection();
                 dao.SetConsult(query);
+                dao.SetParameter("@itemCategoryID", itemCategoryID);
                 dao.ExecuteConsult();
 
                 dao.Reader.Read();
@@ -54,7 +54,7 @@ namespace Data
                     (int)dao.Reader["ID"],
                     (string)dao.Reader["Name"],
                     (bool)dao.Reader["IsActive"]
-                    );
+                );
 
                 return obj;
             }
