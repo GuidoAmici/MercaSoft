@@ -9,24 +9,29 @@ namespace Data
         {
             DAO dao = new();
             string query = "insert into ProductionOrders (UserID, ProducedItemID, Quantity) " +
-                "values (@userID, @productionOrderID, @productionOrderQuantity)";
+                "values (@userID, @producedItemID, @productionOrderQuantity) " +
+                "select SCOPE_IDENTITY() as NewID";
             try
             {
                 dao.OpenConnection();
                 dao.SetConsult(query);
                 dao.SetParameter("@userID", user.ID);
-                dao.SetParameter("@productionOrderID", productionOrder.ID);
+                dao.SetParameter("@producedItemID", productionOrder.Item.ID);
                 dao.SetParameter("@productionOrderQuantity", productionOrder.Quantity);
                 dao.ExecuteConsult();
+
+                dao.Reader.Read();
+
+                productionOrder.ID = Convert.ToInt16(dao.Reader["NewID"]);
             }
             catch (Exception) { throw; }
             finally { dao.CloseConnection(); }
         }
 
-        public static List<ProductionOrder> Get()
+        public static List<ProductionOrder> GetAll()
         {
             DAO dao = new();
-            string query = "select * from Companies";
+            string query = "select * from ProductionOrders";
 
             List<ProductionOrder> list = new();
             ProductionOrder obj;
@@ -60,10 +65,10 @@ namespace Data
             finally { dao.CloseConnection(); }
         }
 
-        public static ProductionOrder Get(int productionOrderID)
+        public static ProductionOrder GetByID(int productionOrderID)
         {
             DAO dao = new();
-            string query = $"select * from Companies where ID = @productionOrderID";
+            string query = "select * from Companies where ID = @productionOrderID";
 
             ProductionOrder obj;
             Item item;
