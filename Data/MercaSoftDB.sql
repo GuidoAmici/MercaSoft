@@ -10,6 +10,10 @@ GO
 USE MercaSoftDB
 GO
 
+/*                                +------------------+                                */
+/*                                |     ENTITIES     |                                */
+/*                                +------------------+                                */
+
 Create table Users(
 	ID int not null identity,
 	Username varchar(30) not null unique,
@@ -40,6 +44,10 @@ Insert into Companies(Name,IsClient,IsSupplier) values
 ('Buen Consejo',1,0)
 GO
 
+/*                                +------------------+                                */
+/*                                |     INVOICES     |                                */
+/*                                +------------------+                                */
+
 Create table Invoices(
 	ID int not null identity,
 	Date DateTime not null default getdate(),
@@ -49,6 +57,10 @@ Create table Invoices(
 	FOREIGN KEY (CompanyID) references Companies(ID)
 )
 GO
+
+/*                                +------------------+                                */
+/*                                |      ITEMS       |                                */
+/*                                +------------------+                                */
 
 Create table ItemCategories(
 	ID int not null identity,
@@ -74,8 +86,9 @@ Create table Items(
 	IsForSale bit not null,
 	StockAvailable int not null default 0,
 	StockInProductionQueue int not null default 0,
+	StockOversold int not null default 0,
 	StockReservedAsSupply int not null default 0,
-	StockMissing int not null default 0, /*Missing supply or oversold*/
+	StockMissingSupplies int not null default 0,
 	Description varchar(100),
 	CodeName varchar(30),
 	BarCode int,
@@ -142,29 +155,6 @@ Create table SupplierItems(
 )
 GO
 
-Create table ReferencePriceHistory(
-	ID int not null identity,
-	ReferencePrice float not null,
-	Date DateTime default getdate()
-	PRIMARY KEY (ID)
-)
-GO
-
-Create table ItemPriceHistory(
-	ID int not null identity,
-	ItemID int not null,
-	AdditionDate DateTime not null default getdate(),
-	Price float not null,
-	AdditionReferencePriceID int not null,
-	DischargeDate DateTime,
-	DischargeReferencePriceID int,
-	PRIMARY KEY (ID),
-	FOREIGN KEY (ItemID) references Items(ID),
-	FOREIGN KEY (AdditionReferencePriceID) references ReferencePriceHistory(ID),
-	FOREIGN KEY (DischargeReferencePriceID) references ReferencePriceHistory(ID)
-)
-GO
-
 Create table InvoiceItems(
 	ID int not null identity,
 	InvoiceID int not null,
@@ -176,15 +166,9 @@ Create table InvoiceItems(
 )
 GO
 
-Create table Records(
-	ID int not null identity,
-	UserID int not null,
-	RecordDetail varchar(20) not null,
-	Date DateTime not null default getdate(),
-	PRIMARY KEY (ID),
-	FOREIGN KEY (UserID) references Users(ID),
-)
-GO
+/*                                +------------------+                                */
+/*                                |    PRODUCTION    |                                */
+/*                                +------------------+                                */
 
 Create table ProductionOrders(
 	ID int not null identity,
@@ -210,5 +194,58 @@ Create table ProductionRows(
 	FOREIGN KEY (ProducedItemID) references Items(ID)
 )
 GO
+/*                                +------------------+                                */
+/*                                |     RECORDS      |                                */
+/*                                +------------------+                                */
 
-select * from Records
+Create table UserRecords(
+	ID int not null identity,
+	Date DateTime not null default getdate(),
+	UserID int not null,
+	Description varchar(30) not null,
+	PRIMARY KEY (ID),
+	FOREIGN KEY (UserID) references Users(ID),
+)
+GO
+
+Create table StockRecords(
+	ID int not null identity,
+	DateTime DateTime not null default getdate(),
+	UserID int not null,
+	Description varchar(30) not null,
+	ItemID int not null,
+	StockAvailable int not null default 0,
+	StockInProductionQueue int not null default 0,
+	StockOversold int not null default 0,
+	StockReservedAsSupply int not null default 0,
+	StockMissingSupplies int not null default 0,
+	PRIMARY KEY (ID),
+	FOREIGN KEY (ItemID) references Items(ID),
+	FOREIGN KEY (UserID) references Users(ID)
+)
+GO
+
+Create table ReferencePriceRecords(
+	ID int not null identity,
+	Date DateTime default getdate(),
+	ReferencePrice float not null
+	PRIMARY KEY (ID)
+)
+GO
+
+Create table ItemPriceRecords(
+	ID int not null identity,
+	ItemID int not null,
+	AdditionDate DateTime not null default getdate(),
+	Price float not null,
+	AdditionReferencePriceID int not null,
+	DischargeDate DateTime,
+	DischargeReferencePriceID int,
+	PRIMARY KEY (ID),
+	FOREIGN KEY (ItemID) references Items(ID),
+	FOREIGN KEY (AdditionReferencePriceID) references ReferencePriceRecords(ID),
+	FOREIGN KEY (DischargeReferencePriceID) references ReferencePriceRecords(ID)
+)
+GO
+
+select * from ProductionOrders
