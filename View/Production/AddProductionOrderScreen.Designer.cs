@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             lblItem = new Label();
             cmbItems = new ComboBox();
             btnSave = new CustomButton();
@@ -59,6 +62,8 @@
             // 
             // cmbItems
             // 
+            cmbItems.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbItems.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbItems.BackColor = Color.FromArgb(35, 35, 35);
             cmbItems.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cmbItems.ForeColor = Color.FromArgb(0, 125, 250);
@@ -156,9 +161,13 @@
             // iDDataGridViewTextBoxColumn
             // 
             iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            iDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             iDDataGridViewTextBoxColumn.HeaderText = "ID";
             iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             iDDataGridViewTextBoxColumn.ReadOnly = true;
+            iDDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
             iDDataGridViewTextBoxColumn.Width = 48;
             // 
             // codeNameDataGridViewTextBoxColumn
@@ -180,6 +189,9 @@
             // stockDataGridViewTextBoxColumn
             // 
             stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            stockDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             stockDataGridViewTextBoxColumn.HeaderText = "Stock";
             stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
             stockDataGridViewTextBoxColumn.ReadOnly = true;
@@ -197,6 +209,9 @@
             // Quantity
             // 
             Quantity.DataPropertyName = "SuppliedQuantity";
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            Quantity.DefaultCellStyle = dataGridViewCellStyle3;
             Quantity.HeaderText = "Cant. insumos";
             Quantity.Name = "Quantity";
             Quantity.ReadOnly = true;
