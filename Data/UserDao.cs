@@ -34,48 +34,10 @@ namespace Control
             finally { dao.CloseConnection(); }
         }
 
-        public static void RegisterLogIn(User user)
-        {
-            DAO dao = new();
-
-            string recordDetail = "Log In";
-            string query = "insert into Records (UserID,RecordDetail) values (@userID,@recordDetail)";
-
-            try
-            {
-                dao.OpenConnection();
-                dao.SetConsult(query);
-                dao.SetParameter("@userID", user.ID);
-                dao.SetParameter("@recordDetail", recordDetail);
-                dao.ExecuteConsult();
-            }
-            catch (Exception) { throw; }
-            finally { dao.CloseConnection(); }
-        }
-
-        public static void RegisterLogOut(User user)
-        {
-            DAO dao = new();
-
-            string recordDetail = "Log Out";
-            string query = "insert into Records (UserID,RecordDetail) values (@userID,@recordDetail)";
-
-            try
-            {
-                dao.OpenConnection();
-                dao.SetConsult(query);
-                dao.SetParameter("@userID", user.ID);
-                dao.SetParameter("@recordDetail", recordDetail);
-                dao.ExecuteConsult();
-            }
-            catch (Exception) { throw; }
-            finally { dao.CloseConnection(); }
-        }
-
         public static bool UserExists(string username)
         {
             DAO dao = new();
-            string query = $"select * from users where Username = @username";
+            string query = "select * from users where Username = @username";
 
             try
             {
@@ -93,7 +55,7 @@ namespace Control
         internal static User GetUserByID(int userID)
         {
             DAO dao = new();
-            string query = $"select * from Users where ID = @userID";
+            string query = "select * from Users where ID = @userID";
 
             User user;
 
@@ -108,7 +70,7 @@ namespace Control
 
                 user = new(
                     (int)dao.Reader["ID"],
-                    (string)dao.Reader["Userame"],
+                    (string)dao.Reader["Username"],
                     (string)dao.Reader["Password"],
                     (string)dao.Reader["Email"]
                 );
