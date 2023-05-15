@@ -42,6 +42,10 @@
 
         public Item()
         {
+            ID = -1;
+            Name = "Empty item";
+            Stock = new();
+            ItemCategory = new();
         }
 
         public override string ToString()

@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using Data;
+using Entities;
 
 namespace Control
 {
@@ -16,16 +17,14 @@ namespace Control
         {
             User = UserDao.GetUser(username, password);
             if (LogStatus())
-                UserDao.RegisterLogIn(User);
+                RecordDao.AddLogInRecord(User);
         }
 
         public static void LogOut()
         {
             if (LogStatus())
             {
-#pragma warning disable CS8604 // Possible null reference argument.
-                UserDao.RegisterLogOut(User);
-#pragma warning restore CS8604 // Possible null reference argument.
+                RecordDao.AddLogOutRecord(User);
                 User = null;
             }
         }

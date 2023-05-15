@@ -5,7 +5,7 @@ namespace Data
 {
     public static class CompanyDao
     {
-        public static List<Company> GetCompanies()
+        public static List<Company> GetAll()
         {
             DAO dao = new();
             string query = "select * from Companies";

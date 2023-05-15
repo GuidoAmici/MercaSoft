@@ -13,7 +13,7 @@ namespace View
 
         private void Reload()
         {
-            foreach (ItemCategory category in Info.GetCategories(true))
+            foreach (ItemCategory category in Cloud.GetCategories(true))
             {
                 cmbCategories.Items.Add(category);
             }

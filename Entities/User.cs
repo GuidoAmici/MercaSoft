@@ -9,7 +9,7 @@
 
         public User()
         {
-            ID = 0;
+            ID = -1;
             Username = string.Empty;
             Password = string.Empty;
             Email = string.Empty;

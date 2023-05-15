@@ -19,7 +19,7 @@ namespace View
 
         private void ReloadCompanies()
         {
-            foreach (Company company in Info.LoadClients())
+            foreach (Company company in Cloud.LoadClients())
             {
                 cmbClients.Items.Add(company);
             }

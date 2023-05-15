@@ -13,6 +13,10 @@
             IsActive = active;
         }
 
+        public ItemCategory()
+        {
+        }
+
         public override string ToString()
         {
             return Name;

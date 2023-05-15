@@ -128,7 +128,7 @@ namespace View
 
         private void SubmenuProductionOrderHistory_Click(object sender, EventArgs e)
         {
-
+            InsertIntoPanel<ProductionOrderHistoryScreen>();
         }
 
         private void SubmenuAddProductionRow_Click(object sender, EventArgs e)

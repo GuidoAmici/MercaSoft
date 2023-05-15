@@ -3,12 +3,17 @@
     public class ProductionOrder
     {
         public int ID { get; set; }
-        public User User { get; set; }
         public DateTime DateTime { get; set; }
+        public User User { get; set; }
         public Item Item { get; set; }
         public int Quantity { get; set; }
 
-        public ProductionOrder() { }
+        public ProductionOrder()
+        {
+            ID = -1;
+            User = new();
+            Item = new();
+        }
 
         public ProductionOrder(int id, User user, DateTime dateTime, Item item, int quantity)
         {
@@ -21,7 +26,7 @@
 
         public override string ToString()
         {
-            return $"Orden de Producción Nº {ID}";
+            return $"O.P. Nº {ID} - {Item.Name} * {Quantity}";
         }
     }
 }
