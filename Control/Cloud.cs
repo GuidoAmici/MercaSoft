@@ -5,6 +5,8 @@ namespace Control
 {
     public static class Cloud
     {
+        // GET methods
+
         public static List<ItemCategory> GetCategories(bool isActive)
         {
             List<ItemCategory> list = ItemCategoryDao.Get();
@@ -47,6 +49,13 @@ namespace Control
             return ItemDao.GetSupplies(itemProduced);
         }
 
+        public static List<ProductionOrder> GetProductionOrders()
+        {
+            return ProductionOrderDAO.GetAll();
+        }
+
+        // SET methods
+
         public static void SubmitProductionOrder(ProductionOrder productionOrder, List<Item> supplyList)
         {
             ProductionOrderDAO.Add(productionOrder, Sesion.User);
@@ -85,9 +94,10 @@ namespace Control
             }
         }
 
-        public static List<ProductionOrder> GetProductionOrders()
+        public static void UploadItem(Item item)
         {
-            return ProductionOrderDAO.GetAll();
+            ItemDao.AddItem(item);
+            ItemDao.AssociateSupplies(item, item.Supplies);
         }
     }
 }
