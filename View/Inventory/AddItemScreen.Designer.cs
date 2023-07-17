@@ -42,7 +42,13 @@
             txtDescription = new CustomTextBox();
             lblDescription = new Label();
             btnSave = new CustomButton();
-            checkBox1 = new CheckBox();
+            chkIsProducible = new CheckBox();
+            btnAssociateSupplies = new CustomButton();
+            dgvAssociatedSupplies = new CustomDataGridView();
+            lblDgvAssociatedSupplies = new Label();
+            cmbSupplies = new ComboBox();
+            lblSupplyList = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvAssociatedSupplies).BeginInit();
             SuspendLayout();
             // 
             // chkIsForSale
@@ -68,7 +74,7 @@
             txtItemName.BorderStyle = BorderStyle.FixedSingle;
             txtItemName.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtItemName.ForeColor = Color.FromArgb(0, 125, 250);
-            txtItemName.Location = new Point(63, 63);
+            txtItemName.Location = new Point(59, 59);
             txtItemName.MaxLength = 50;
             txtItemName.Name = "txtItemName";
             txtItemName.PlaceholderText = "Obligatorio";
@@ -82,7 +88,7 @@
             lblItemName.AutoSize = true;
             lblItemName.BackColor = Color.Transparent;
             lblItemName.ForeColor = Color.White;
-            lblItemName.Location = new Point(63, 41);
+            lblItemName.Location = new Point(59, 37);
             lblItemName.Name = "lblItemName";
             lblItemName.Size = new Size(145, 19);
             lblItemName.TabIndex = 1;
@@ -94,7 +100,7 @@
             lblCodeName.AutoSize = true;
             lblCodeName.BackColor = Color.Transparent;
             lblCodeName.ForeColor = Color.White;
-            lblCodeName.Location = new Point(441, 41);
+            lblCodeName.Location = new Point(436, 37);
             lblCodeName.Name = "lblCodeName";
             lblCodeName.Size = new Size(138, 19);
             lblCodeName.TabIndex = 5;
@@ -155,7 +161,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(61, 132);
+            label1.Location = new Point(59, 120);
             label1.Name = "label1";
             label1.Size = new Size(75, 19);
             label1.TabIndex = 3;
@@ -170,7 +176,7 @@
             txtBarCode.BorderStyle = BorderStyle.FixedSingle;
             txtBarCode.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtBarCode.ForeColor = Color.FromArgb(0, 125, 250);
-            txtBarCode.Location = new Point(441, 155);
+            txtBarCode.Location = new Point(441, 143);
             txtBarCode.MaxLength = 50;
             txtBarCode.Name = "txtBarCode";
             txtBarCode.PlaceholderText = "Opcional";
@@ -184,7 +190,7 @@
             lblBarCode.AutoSize = true;
             lblBarCode.BackColor = Color.Transparent;
             lblBarCode.ForeColor = Color.White;
-            lblBarCode.Location = new Point(441, 133);
+            lblBarCode.Location = new Point(441, 121);
             lblBarCode.Name = "lblBarCode";
             lblBarCode.Size = new Size(126, 19);
             lblBarCode.TabIndex = 10;
@@ -198,7 +204,7 @@
             cmbCategories.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cmbCategories.ForeColor = Color.FromArgb(0, 125, 250);
             cmbCategories.FormattingEnabled = true;
-            cmbCategories.Location = new Point(63, 154);
+            cmbCategories.Location = new Point(61, 142);
             cmbCategories.Name = "cmbCategories";
             cmbCategories.Size = new Size(280, 29);
             cmbCategories.TabIndex = 4;
@@ -212,12 +218,12 @@
             txtDescription.BorderStyle = BorderStyle.FixedSingle;
             txtDescription.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtDescription.ForeColor = Color.FromArgb(0, 125, 250);
-            txtDescription.Location = new Point(441, 249);
+            txtDescription.Location = new Point(441, 219);
             txtDescription.MaxLength = 200;
             txtDescription.Multiline = true;
             txtDescription.Name = "txtDescription";
             txtDescription.PlaceholderText = "Describa el artículo";
-            txtDescription.Size = new Size(280, 96);
+            txtDescription.Size = new Size(280, 116);
             txtDescription.TabIndex = 13;
             txtDescription.TextAlign = HorizontalAlignment.Center;
             // 
@@ -227,7 +233,7 @@
             lblDescription.AutoSize = true;
             lblDescription.BackColor = Color.Transparent;
             lblDescription.ForeColor = Color.White;
-            lblDescription.Location = new Point(441, 227);
+            lblDescription.Location = new Point(441, 197);
             lblDescription.Name = "lblDescription";
             lblDescription.Size = new Size(87, 19);
             lblDescription.TabIndex = 12;
@@ -255,18 +261,101 @@
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += BtnSave_Click;
             // 
-            // checkBox1
+            // chkIsProducible
             // 
-            checkBox1.Anchor = AnchorStyles.None;
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.Transparent;
-            checkBox1.ForeColor = Color.White;
-            checkBox1.Location = new Point(61, 223);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(243, 23);
-            checkBox1.TabIndex = 15;
-            checkBox1.Text = "¿Artículo de producción propia?";
-            checkBox1.UseVisualStyleBackColor = false;
+            chkIsProducible.Anchor = AnchorStyles.None;
+            chkIsProducible.AutoSize = true;
+            chkIsProducible.BackColor = Color.Transparent;
+            chkIsProducible.ForeColor = Color.White;
+            chkIsProducible.Location = new Point(61, 187);
+            chkIsProducible.Name = "chkIsProducible";
+            chkIsProducible.Size = new Size(243, 23);
+            chkIsProducible.TabIndex = 15;
+            chkIsProducible.Text = "¿Artículo de producción propia?";
+            chkIsProducible.UseVisualStyleBackColor = false;
+            chkIsProducible.CheckedChanged += ChkIsProducible_CheckedChanged;
+            // 
+            // btnAssociateSupplies
+            // 
+            btnAssociateSupplies.Anchor = AnchorStyles.None;
+            btnAssociateSupplies.BackColor = Color.FromArgb(25, 25, 25);
+            btnAssociateSupplies.FlatAppearance.BorderSize = 0;
+            btnAssociateSupplies.FlatStyle = FlatStyle.Flat;
+            btnAssociateSupplies.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAssociateSupplies.ForeColor = Color.FromArgb(0, 125, 250);
+            btnAssociateSupplies.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnAssociateSupplies.IconColor = Color.FromArgb(0, 125, 250);
+            btnAssociateSupplies.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAssociateSupplies.IconSize = 30;
+            btnAssociateSupplies.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAssociateSupplies.Location = new Point(120, 216);
+            btnAssociateSupplies.Name = "btnAssociateSupplies";
+            btnAssociateSupplies.Size = new Size(184, 30);
+            btnAssociateSupplies.TabIndex = 16;
+            btnAssociateSupplies.Text = "Asociar insumos";
+            btnAssociateSupplies.TextAlign = ContentAlignment.MiddleRight;
+            btnAssociateSupplies.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAssociateSupplies.UseVisualStyleBackColor = true;
+            btnAssociateSupplies.Visible = false;
+            btnAssociateSupplies.Click += BtnAssociateSuppies_Click;
+            // 
+            // dgvAssociatedSupplies
+            // 
+            dgvAssociatedSupplies.AllowUserToAddRows = false;
+            dgvAssociatedSupplies.AllowUserToDeleteRows = false;
+            dgvAssociatedSupplies.AllowUserToResizeRows = false;
+            dgvAssociatedSupplies.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgvAssociatedSupplies.BackgroundColor = Color.FromArgb(35, 35, 35);
+            dgvAssociatedSupplies.BorderStyle = BorderStyle.Fixed3D;
+            dgvAssociatedSupplies.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAssociatedSupplies.GridColor = SystemColors.InactiveCaptionText;
+            dgvAssociatedSupplies.Location = new Point(441, 121);
+            dgvAssociatedSupplies.Name = "dgvAssociatedSupplies";
+            dgvAssociatedSupplies.ReadOnly = true;
+            dgvAssociatedSupplies.RowHeadersVisible = false;
+            dgvAssociatedSupplies.RowTemplate.Height = 25;
+            dgvAssociatedSupplies.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAssociatedSupplies.Size = new Size(280, 214);
+            dgvAssociatedSupplies.TabIndex = 17;
+            dgvAssociatedSupplies.Visible = false;
+            // 
+            // lblDgvAssociatedSupplies
+            // 
+            lblDgvAssociatedSupplies.Anchor = AnchorStyles.None;
+            lblDgvAssociatedSupplies.AutoSize = true;
+            lblDgvAssociatedSupplies.BackColor = Color.Transparent;
+            lblDgvAssociatedSupplies.ForeColor = Color.White;
+            lblDgvAssociatedSupplies.Location = new Point(441, 99);
+            lblDgvAssociatedSupplies.Name = "lblDgvAssociatedSupplies";
+            lblDgvAssociatedSupplies.Size = new Size(133, 19);
+            lblDgvAssociatedSupplies.TabIndex = 18;
+            lblDgvAssociatedSupplies.Text = "Insumos asociados";
+            // 
+            // cmbSupplies
+            // 
+            cmbSupplies.Anchor = AnchorStyles.None;
+            cmbSupplies.BackColor = Color.FromArgb(35, 35, 35);
+            cmbSupplies.FlatStyle = FlatStyle.Flat;
+            cmbSupplies.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbSupplies.ForeColor = Color.FromArgb(0, 125, 250);
+            cmbSupplies.FormattingEnabled = true;
+            cmbSupplies.Location = new Point(441, 58);
+            cmbSupplies.Name = "cmbSupplies";
+            cmbSupplies.Size = new Size(280, 29);
+            cmbSupplies.TabIndex = 19;
+            // 
+            // lblSupplyList
+            // 
+            lblSupplyList.Anchor = AnchorStyles.None;
+            lblSupplyList.AutoSize = true;
+            lblSupplyList.BackColor = Color.Transparent;
+            lblSupplyList.ForeColor = Color.White;
+            lblSupplyList.Location = new Point(441, 36);
+            lblSupplyList.Name = "lblSupplyList";
+            lblSupplyList.Size = new Size(118, 19);
+            lblSupplyList.TabIndex = 20;
+            lblSupplyList.Text = "Lista de insumos";
+            lblSupplyList.Click += lblSupplies_Click;
             // 
             // AddItemScreen
             // 
@@ -275,7 +364,10 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(28, 28, 28);
             ClientSize = new Size(784, 470);
-            Controls.Add(checkBox1);
+            Controls.Add(lblSupplyList);
+            Controls.Add(cmbSupplies);
+            Controls.Add(btnAssociateSupplies);
+            Controls.Add(chkIsProducible);
             Controls.Add(btnSave);
             Controls.Add(cmbCategories);
             Controls.Add(lblBarCode);
@@ -284,16 +376,19 @@
             Controls.Add(lblSalePrice);
             Controls.Add(txtSalePrice);
             Controls.Add(lblDescription);
-            Controls.Add(lblCodeName);
             Controls.Add(txtDescription);
             Controls.Add(txtCodeName);
             Controls.Add(lblItemName);
             Controls.Add(txtItemName);
             Controls.Add(chkIsForSale);
+            Controls.Add(dgvAssociatedSupplies);
+            Controls.Add(lblDgvAssociatedSupplies);
+            Controls.Add(lblCodeName);
             ForeColor = SystemColors.ActiveCaption;
             Name = "AddItemScreen";
             Padding = new Padding(60);
             Text = "Agregar nuevo item";
+            ((System.ComponentModel.ISupportInitialize)dgvAssociatedSupplies).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -314,6 +409,11 @@
         private CustomTextBox txtDescription;
         private Label lblDescription;
         private CustomButton btnSave;
-        private CheckBox checkBox1;
+        private CheckBox chkIsProducible;
+        private CustomButton btnAssociateSupplies;
+        private CustomDataGridView dgvAssociatedSupplies;
+        private Label lblDgvAssociatedSupplies;
+        private ComboBox cmbSupplies;
+        private Label lblSupplyList;
     }
 }
