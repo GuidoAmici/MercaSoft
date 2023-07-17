@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvProductionOrders = new CustomDataGridView();
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dateTimeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -37,6 +37,7 @@
             itemDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             quantityDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             productionOrderBindingSource = new BindingSource(components);
+            btnSave = new CustomButton();
             ((System.ComponentModel.ISupportInitialize)dgvProductionOrders).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productionOrderBindingSource).BeginInit();
             SuspendLayout();
@@ -60,7 +61,7 @@
             dgvProductionOrders.RowHeadersVisible = false;
             dgvProductionOrders.RowTemplate.Height = 25;
             dgvProductionOrders.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProductionOrders.Size = new Size(674, 384);
+            dgvProductionOrders.Size = new Size(674, 332);
             dgvProductionOrders.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
@@ -98,9 +99,9 @@
             // quantityDataGridViewTextBoxColumn
             // 
             quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            quantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            quantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
             quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             quantityDataGridViewTextBoxColumn.ReadOnly = true;
@@ -110,11 +111,33 @@
             // 
             productionOrderBindingSource.DataSource = typeof(Entities.ProductionOrder);
             // 
+            // btnSave
+            // 
+            btnSave.Anchor = AnchorStyles.None;
+            btnSave.BackColor = Color.FromArgb(25, 25, 25);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Nirmala UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSave.ForeColor = Color.FromArgb(0, 125, 250);
+            btnSave.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            btnSave.IconColor = Color.FromArgb(0, 125, 250);
+            btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSave.IconSize = 30;
+            btnSave.Location = new Point(320, 371);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(160, 46);
+            btnSave.TabIndex = 1;
+            btnSave.Text = "Guardar";
+            btnSave.TextAlign = ContentAlignment.MiddleRight;
+            btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSave.UseVisualStyleBackColor = true;
+            // 
             // ProductionOrderHistoryScreen
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnSave);
             Controls.Add(dgvProductionOrders);
             Name = "ProductionOrderHistoryScreen";
             Text = "ProductionOrderHistory";
@@ -132,5 +155,6 @@
         private DataGridViewTextBoxColumn userDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private CustomButton btnSave;
     }
 }
