@@ -1,0 +1,71 @@
+﻿<Window x:Class="View2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View2"
+        mc:Ignorable="d"
+        Title="MercaSoft" Height="600" Width="800">
+    
+    <Border CornerRadius="10"
+            Background="#232323">
+        <Grid Name="Principal"
+            Background="Transparent">
+            <!--#region HEADER-->
+                <TabPanel Background="#191919">
+                    <Button x:Name="menuDashboard" Style="{StaticResource TabBarButton}" Click="MenuDashboard_Click">
+                        <StackPanel>
+                            <TextBlock Text="&#xf274;" Style="{StaticResource TabBarIcon}"/>
+                            <TextBlock Text="Dashboard" Style="{StaticResource TabBarLabel}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="menuSales" Style="{StaticResource TabBarButton}">
+                        <StackPanel>
+                            <TextBlock Text="&#xf02c;" Style="{StaticResource TabBarIcon}"/>
+                            <TextBlock Text="Ventas" Style="{StaticResource TabBarLabel}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="menuProduction" Style="{StaticResource TabBarButton}">
+                        <StackPanel>
+                            <TextBlock Text="&#xf54a;" Style="{StaticResource TabBarIcon}"/>
+                            <TextBlock Text="Producción" Style="{StaticResource TabBarLabel}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="menuInventory" Style="{StaticResource TabBarButton}">
+                        <StackPanel>
+                            <TextBlock Text="&#xf468;" Style="{StaticResource TabBarIcon}"/>
+                            <TextBlock Text="Inventario" Style="{StaticResource TabBarLabel}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="menuPurchases" Style="{StaticResource TabBarButton}">
+                        <StackPanel>
+                            <TextBlock Text="&#xf49e;" Style="{StaticResource TabBarIcon}"/>
+                            <TextBlock Text="Compras" Style="{StaticResource TabBarLabel}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="menuLogistics" Style="{StaticResource TabBarButton}">
+                        <StackPanel>
+                            <TextBlock Text="&#xf0d1;" Style="{StaticResource TabBarIcon}"/>
+                            <TextBlock Text="Logística" Style="{StaticResource TabBarLabel}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="menuMyUser" Style="{StaticResource TabBarButton}">
+                        <StackPanel>
+                            <TextBlock Text="&#xf007;" Style="{StaticResource TabBarIcon}"/>
+                            <TextBlock Text="Mi Usuario" Style="{StaticResource TabBarLabel}"/>
+                        </StackPanel>
+                    </Button>
+                </TabPanel>
+            <!--#endregion-->
+            
+            <!--#region BODY-->
+            <!--#endregion-->
+        </Grid>
+    </Border>
+</Window>
