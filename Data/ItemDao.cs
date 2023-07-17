@@ -3,9 +3,73 @@ using Entities;
 
 namespace Data
 {
-
     public static class ItemDao
     {
+        // CREATE methods
+
+        public static void AddItem(Item item)
+        {
+            DAO dao = new();
+
+            string query = "insert into Items (Name, IsProducible, IsForSale, Price, " +
+                "ItemCategoryID, Description, CodeName, BarCode) values (" +
+                "@name, " +
+                "@isProducible, " +
+                "@isForSale, " +
+                "@price, " +
+                "@itemCategoryID, " +
+                "@description, " +
+                "@codeName, " +
+                "@barCode )";
+
+            try
+            {
+                dao.OpenConnection();
+                dao.SetConsult(query);
+                dao.SetParameter("@name", item.Name);
+                dao.SetParameter("@price", item.Price);
+                dao.SetParameter("@isProducible", item.IsProducible);
+                dao.SetParameter("@isForSale", item.IsForSale);
+                dao.SetParameter("@itemCategoryID", item.ItemCategory.ID);
+                dao.SetParameter("@description", item.Description);
+                dao.SetParameter("@codeName", item.CodeName);
+                dao.SetParameter("@barCode", item.BarCode);
+                dao.SetParameter("@itemID", item.ID);
+                dao.ExecuteConsult();
+
+            }
+            catch (Exception) { throw; }
+            finally { dao.CloseConnection(); }
+        }
+
+        public static void AssociateSupplies(Item item, List<Item> supplyList)
+        {
+            DAO dao = new();
+
+            string query = "insert into SupplyItems (ProducedItemID, SupplyItemID, SuppliedQuantity) values (" +
+                "@producedItemID, " +
+                "@supplyItemID, " +
+                "@quantity" +
+                ")";
+
+            try
+            {
+                dao.OpenConnection();
+                dao.SetConsult(query);
+                dao.SetParameter("@producedItemID", item);
+                foreach (Item supply in supplyList)
+                {
+                    dao.SetParameter("@supplyItemID", item);
+                    dao.SetParameter("@suppliedQuantity", item.SuppliedQuantity);
+                }
+                dao.ExecuteConsult();
+            }
+            catch (Exception) { throw; }
+            finally { dao.CloseConnection(); }
+        }
+
+        // READ methods
+
         public static List<Item> GetItemsForSale(bool isForSale)
         {
             DAO dao = new();
@@ -51,7 +115,7 @@ namespace Data
         public static List<Item> GetProducibleItems(bool producible)
         {
             DAO dao = new();
-            string query = "select * from Items where Producible = @producible";
+            string query = "select * from Items where IsProducible = @producible";
             List<Item> list = new();
             Item obj;
             ItemCategory itemCategory;
@@ -134,7 +198,7 @@ namespace Data
             finally { dao.CloseConnection(); }
         }
 
-        internal static Item GetItemByID(int itemID)
+        public static Item GetItemByID(int itemID)
         {
             DAO dao = new();
 
@@ -174,6 +238,8 @@ namespace Data
             finally { dao.CloseConnection(); }
         }
 
+        // UPDATE methods
+
         public static void Update(Item item)
         {
             DAO dao = new();
@@ -182,7 +248,7 @@ namespace Data
                 "Name = @name, " +
                 "Price = @price, " +
                 "ItemCategoryID = @itemCategoryID, " +
-                "Producible = @producible, " +
+                "IsProducible = @isProducible, " +
                 "IsForSale = @isForSale, " +
                 "Description = @description, " +
                 "CodeName = @codeName, " +
@@ -193,19 +259,23 @@ namespace Data
             {
                 dao.OpenConnection();
                 dao.SetConsult(query);
-                dao.SetParameter("@name", item.ID);
-                dao.SetParameter("@price", item.ID);
-                dao.SetParameter("@itemCategoryID", item.ID);
-                dao.SetParameter("@producible", item.ID);
-                dao.SetParameter("@isForSale", item.ID);
-                dao.SetParameter("@description", item.ID);
-                dao.SetParameter("@codeName", item.ID);
-                dao.SetParameter("@barCode", item.ID);
+                dao.SetParameter("@name", item.Name);
+                dao.SetParameter("@isProducible", item.IsProducible);
+                dao.SetParameter("@isForSale", item.IsForSale);
+                dao.SetParameter("@price", item.Price);
+                dao.SetParameter("@itemCategoryID", item.ItemCategory.ID);
+                dao.SetParameter("@description", item.Description);
+                dao.SetParameter("@codeName", item.CodeName);
+                dao.SetParameter("@barCode", item.BarCode);
                 dao.SetParameter("@itemID", item.ID);
                 dao.ExecuteConsult();
             }
             catch (Exception) { throw; }
             finally { dao.CloseConnection(); }
         }
+
+
+        // DELETE methods
+
     }
 }

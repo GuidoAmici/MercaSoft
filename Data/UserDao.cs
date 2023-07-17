@@ -4,6 +4,8 @@ namespace Control
 {
     public class UserDao
     {
+        // CREATE methods
+
         public static User GetUser(string username, string password)
         {
             DAO dao = new();
@@ -80,5 +82,11 @@ namespace Control
             catch (Exception) { throw; }
             finally { dao.CloseConnection(); }
         }
+
+        // READ methods
+
+        // UPDATE methods
+
+        // DELETE methods
     }
 }

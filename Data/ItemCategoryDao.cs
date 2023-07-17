@@ -5,6 +5,8 @@ namespace Data
 {
     public static class ItemCategoryDao
     {
+        // CREATE methods
+
         public static List<ItemCategory> Get()
         {
             DAO dao = new();
@@ -61,5 +63,13 @@ namespace Data
             catch (Exception) { throw; }
             finally { dao.CloseConnection(); }
         }
+
+        // READ methods
+
+
+        // UPDATE methods
+
+
+        // DELETE methods
     }
 }

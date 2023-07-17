@@ -5,6 +5,11 @@ namespace Data
 {
     public static class CompanyDao
     {
+        // CREATE methods
+
+
+        // READ methods
+
         public static List<Company> GetAll()
         {
             DAO dao = new();
@@ -34,5 +39,12 @@ namespace Data
             catch (Exception) { throw; }
             finally { dao.CloseConnection(); }
         }
+
+        // UPDATE methods
+
+
+        // DELETE methods
+
+
     }
 }

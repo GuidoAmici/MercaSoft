@@ -5,6 +5,11 @@ namespace Data
 {
     public class StockDao
     {
+        // CREATE methods
+
+        // READ methods
+
+        // UPDATE methods
         public static void Update(Item item)
         {
             DAO dao = new();
@@ -32,5 +37,8 @@ namespace Data
             catch (Exception) { throw; }
             finally { dao.CloseConnection(); }
         }
+
+        // DELETE methods
+
     }
 }

@@ -5,6 +5,7 @@ namespace Data
 {
     public class RecordDao
     {
+        // CREATE methods
 
         public static void AddLogInRecord(User user)
         {
@@ -43,6 +44,7 @@ namespace Data
             catch (Exception) { throw; }
             finally { dao.CloseConnection(); }
         }
+
         public static void AddStockRecord(User user, Item item, string description)
         {
             DAO dao = new();
@@ -68,5 +70,11 @@ namespace Data
             catch (Exception) { throw; }
             finally { dao.CloseConnection(); }
         }
+
+        // READ methods
+
+        // UPDATE methods
+
+        // DELETE methods
     }
 }

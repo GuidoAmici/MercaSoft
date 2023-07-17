@@ -5,6 +5,7 @@ namespace Data
 {
     public class ProductionOrderDAO
     {
+        // CREATE methods
         public static void Add(ProductionOrder productionOrder, User user)
         {
             DAO dao = new();
@@ -27,6 +28,8 @@ namespace Data
             catch (Exception) { throw; }
             finally { dao.CloseConnection(); }
         }
+
+        // READ methods
 
         public static List<ProductionOrder> GetAll()
         {
@@ -99,5 +102,9 @@ namespace Data
             catch (Exception) { throw; }
             finally { dao.CloseConnection(); }
         }
+
+        // UPDATE methods
+
+        // DELETE methods
     }
 }
