@@ -4,6 +4,7 @@
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        public bool IsProducible { get; set; }
         public bool IsForSale { get; set; }
         public float Price { get; set; }
         public Stock Stock { get; set; }
@@ -12,12 +13,14 @@
         public string? CodeName { get; set; }
         public int? BarCode { get; set; }
         public int? SuppliedQuantity { get; set; }
+        public List<Item>? Supplies { get; set; }
 
-        public Item(int id, string name, bool isforsale, float price, Stock stock,
+        public Item(int id, string name, bool isproducible, bool isforsale, float price, Stock stock,
             ItemCategory category, string description, string codename, int barcode)
         {
             ID = id;
             Name = name;
+            IsProducible = isproducible;
             IsForSale = isforsale;
             Price = price;
             Stock = stock;
@@ -31,6 +34,7 @@
         {
             ID = item.ID;
             Name = item.Name;
+            IsProducible = item.IsProducible;
             IsForSale = item.IsForSale;
             Price = item.Price;
             Stock = item.Stock;
@@ -38,6 +42,8 @@
             Description = item.Description;
             CodeName = item.CodeName;
             BarCode = item.BarCode;
+            SuppliedQuantity = item.SuppliedQuantity;
+            Supplies = item.Supplies;
         }
 
         public Item()
@@ -46,6 +52,7 @@
             Name = "Empty item";
             Stock = new();
             ItemCategory = new();
+            Supplies = new List<Item>();
         }
 
         public override string ToString()

@@ -81,14 +81,14 @@ Create table Items(
 	ID int not null identity,
 	Name varchar(50) not null,
 	Price float,
-	ItemCategoryID int,
-	Producible bit not null,
+	IsProducible bit not null,
 	IsForSale bit not null,
 	StockAvailable int not null default 0,
 	StockInProductionQueue int not null default 0,
 	StockOversold int not null default 0,
 	StockReservedAsSupply int not null default 0,
 	StockMissingSupplies int not null default 0,
+	ItemCategoryID int,
 	Description varchar(100),
 	CodeName varchar(30),
 	BarCode int,
@@ -97,7 +97,7 @@ Create table Items(
 )
 GO
 
-Insert into Items (Name,ItemCategoryID,Producible,IsForSale,StockAvailable) values
+Insert into Items (Name,ItemCategoryID,IsProducible,IsForSale,StockAvailable) values
 	('Buffer pH 4.01 (50 ml)',1,1,1,12),
 	('Buffer pH 6.86 (50 ml)',1,1,1,24),
 	('Buffer pH 9.18 (50 ml)',1,1,1,36),
@@ -129,14 +129,14 @@ Create table SupplyItems(
 	ID int not null identity,
 	ProducedItemID int not null,
 	SupplyItemID int not null,
-	Quantity int not null,
+	SuppliedQuantity int not null,
 	PRIMARY KEY (ID),
 	FOREIGN KEY (ProducedItemID) references Items(ID),
 	FOREIGN KEY (SupplyItemID) references Items(ID)
 )
 GO
 
-Insert into SupplyItems (ProducedItemID,SupplyItemID,Quantity) values
+Insert into SupplyItems (ProducedItemID,SupplyItemID,SuppliedQuantity) values
 	(7,13,1),
 	(7,19,1),
 	(1,7,1),
@@ -194,6 +194,7 @@ Create table ProductionRows(
 	FOREIGN KEY (ProducedItemID) references Items(ID)
 )
 GO
+
 /*                                +------------------+                                */
 /*                                |     RECORDS      |                                */
 /*                                +------------------+                                */
